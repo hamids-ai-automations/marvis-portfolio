@@ -47,9 +47,12 @@ project and never touch the sites listed under "Do not touch" in `AGENTS.md`.
 
 ### Required GitHub configuration
 
-- Secret `FIREBASE_SERVICE_ACCOUNT`: JSON key of a service account with the **Firebase Hosting
-  Admin** role on `my-1st-web-app-ef52d`. Create it in Google Cloud Console → IAM → Service accounts
-  → Keys, paste the whole JSON into the secret. Never commit it.
+- Secret `FIREBASE_SERVICE_ACCOUNT` (configured): JSON key of `github-deploy@my-1st-web-app-ef52d.iam.gserviceaccount.com`,
+  which holds `roles/firebasehosting.admin` on the project. Rotate it by creating a new key, then
+  `gh secret set FIREBASE_SERVICE_ACCOUNT --repo hamids-ai-automations/marvis-portfolio < key.json`,
+  and delete the old key. Never commit it.
+- When the secret is absent, `deploy.yml` still runs the quality gate and then emits a notice
+  instead of failing — the push stays green and local `npm run deploy` remains the fallback.
 - Environment `production` (used by `deploy.yml`) may carry protection rules; keep it unrestricted for
   autonomous pushes to `main`.
 

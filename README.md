@@ -24,7 +24,7 @@ the record hash triggers a rebuild and deploy.
 | Writing index | `/articles/` |
 | Articles | 4 long-form pieces (`/articles/<slug>/`) |
 | Services index | `/services/` |
-| Services | 7 offers (`/services/<slug>/`) |
+| Services | 6 offers (`/services/<slug>/`) |
 | About / Contact | `/about/`, `/contact/` |
 | Legal | `/privacy/`, `/terms/` |
 | Machine surfaces | `/sitemap.xml` (35 URLs), `/robots.txt`, `/llms.txt`, `/data/projects.json`, `/site.webmanifest`, `/404.html` |
