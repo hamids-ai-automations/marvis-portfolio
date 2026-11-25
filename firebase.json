@@ -1,0 +1,80 @@
+{
+  "hosting": {
+    "target": "marvis",
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": true,
+    "trailingSlash": true,
+    "headers": [
+      {
+        "source": "**/*.@(js|css|woff2|png|jpg|jpeg|svg|webp|avif|ico)",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+      },
+      {
+        "source": "**/*.@(html|xml|txt|json)",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+      },
+      {
+        "source": "**",
+        "headers": [
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+          { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" },
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'none'"
+          }
+        ]
+      }
+    ],
+    "redirects": [
+      { "source": "/open-source", "destination": "/projects/", "type": 301 },
+      { "source": "/work", "destination": "/projects/", "type": 301 },
+      { "source": "/projects.html", "destination": "/projects/", "type": 301 },
+      { "source": "/writing", "destination": "/articles/", "type": 301 },
+      { "source": "/writing/*", "destination": "/articles/", "type": 301 },
+      { "source": "/writing-consent-gap", "destination": "/articles/", "type": 301 },
+      { "source": "/writing-hosting-gap", "destination": "/articles/", "type": 301 },
+      { "source": "/writing-mcp-conformance", "destination": "/articles/", "type": 301 },
+      { "source": "/sitemap", "destination": "/sitemap.xml", "type": 301 },
+
+      { "source": "/services/mcp-server-development", "destination": "/services/mcp-development/", "type": 301 },
+      { "source": "/services/b2b-lead-scoring-automation", "destination": "/services/ai-automation/", "type": 301 },
+      { "source": "/services/ai-search-visibility", "destination": "/services/marketing-technology/", "type": 301 },
+      { "source": "/services/bulk-meta-rewrite", "destination": "/services/marketing-technology/", "type": 301 },
+      { "source": "/services/core-web-vitals-optimization", "destination": "/services/marketing-technology/", "type": 301 },
+      { "source": "/services/google-ads-waste-audit", "destination": "/services/marketing-technology/", "type": 301 },
+      { "source": "/services/server-side-conversion-tracking", "destination": "/services/marketing-technology/", "type": 301 },
+      { "source": "/services/shopify-seo-automation", "destination": "/services/marketing-technology/", "type": 301 },
+      { "source": "/services/structured-data-implementation", "destination": "/services/marketing-technology/", "type": 301 },
+      { "source": "/services/technical-seo-audit", "destination": "/services/marketing-technology/", "type": 301 },
+
+      {
+        "source": "/projects/ai-marketing-growth-os",
+        "destination": "https://github.com/hamids-ai-automations/ai-marketing-growth-os",
+        "type": 301
+      },
+      {
+        "source": "/projects/whatsapp-attribution-router",
+        "destination": "https://github.com/hamids-ai-automations/whatsapp-attribution-router",
+        "type": 301
+      },
+      { "source": "/projects/ai-marketing-mix-copilot", "destination": "/projects/", "type": 301 },
+      { "source": "/projects/ai-marketing-portfolio-meta", "destination": "/projects/", "type": 301 },
+      { "source": "/projects/ai-marketing-shared", "destination": "/projects/", "type": 301 },
+      { "source": "/projects/dynamic-schema-generator", "destination": "/projects/", "type": 301 },
+      { "source": "/projects/ecommerce-seo-optimizer", "destination": "/projects/", "type": 301 },
+      { "source": "/projects/hamid-resume", "destination": "/about/", "type": 301 },
+      { "source": "/projects/hamids-ai-automations", "destination": "/projects/", "type": 301 },
+      { "source": "/projects/issuefit", "destination": "/projects/", "type": 301 },
+      { "source": "/projects/pinvault-pinterest-downloader", "destination": "/projects/", "type": 301 },
+      { "source": "/projects/ppc-performance-dashboard", "destination": "/projects/", "type": 301 },
+      { "source": "/projects/proeventsolutions-pk", "destination": "/projects/", "type": 301 },
+      { "source": "/projects/restock-radar", "destination": "/projects/", "type": 301 },
+      { "source": "/projects/seo-audit-tool", "destination": "/projects/", "type": 301 },
+      { "source": "/projects/seo-doctor", "destination": "/projects/", "type": 301 },
+      { "source": "/projects/nexgen-financial-experts", "destination": "/projects/", "type": 301 }
+    ]
+  }
+}

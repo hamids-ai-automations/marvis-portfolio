@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "my-1st-web-app-ef52d"
+  },
+  "targets": {
+    "my-1st-web-app-ef52d": {
+      "hosting": {
+        "marvis": [
+          "marvis"
+        ]
+      }
+    }
+  }
+}

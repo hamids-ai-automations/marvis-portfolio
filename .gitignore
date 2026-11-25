@@ -1,0 +1,35 @@
+# Build output
+dist/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Firebase
+.firebase/
+firebase-debug.log
+*debug.log
+
+# Local environment / secrets - never commit
+.env
+.env.*
+*.pem
+*service-account*.json
+!data/service-account.example.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Sync scratch
+temp/
+.tmp/
+
+# Local build scratch
+temp-*.txt
+temp-probe.mjs
+
+data/sync-state.json

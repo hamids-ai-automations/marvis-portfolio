@@ -1,0 +1,50 @@
+name: Sync master record
+
+# Pulls the canonical GitHub profile master record, rebuilds the site when the
+# record hash changes, and pushes the refreshed snapshot back to this repo.
+# The push then triggers the deploy workflow.
+
+on:
+  schedule:
+    - cron: '0 5 * * *' # daily 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: sync-master-record
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Refresh data snapshot
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch master record
+        run: npm run sync
+
+      - name: Commit if the snapshot changed
+        id: commit
+        run: |
+          if git diff --quiet -- data/; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Master record unchanged; nothing to do."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git commit -m "chore(data): refresh GitHub master record"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Summary
+        run: echo "Snapshot changed: ${{ steps.commit.outputs.changed }}"
