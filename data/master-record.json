@@ -2,18 +2,18 @@
   "metadata": {
     "schema_version": "1.0.0",
     "username": "hamids-ai-automations",
-    "generated_at": "2026-11-24T23:54:04+00:00",
+    "generated_at": "2026-11-25T11:35:49+00:00",
     "source": "GitHub REST API v3 + GraphQL API v4",
     "generator": "github-profile-master-record/automation/sync.py",
     "canonical": true,
-    "mode": "incremental",
-    "trigger": "automatic profile sync",
+    "mode": "full",
+    "trigger": "scheduled full sync",
     "run": {
-      "mode": "incremental",
-      "trigger": "automatic profile sync",
-      "api_requests": 314,
+      "mode": "full",
+      "trigger": "scheduled full sync",
+      "api_requests": 1097,
       "failed_requests": 0,
-      "duration_seconds": 52.0,
+      "duration_seconds": 111.5,
       "failures": [
         "packages unavailable: HTTP 422 for https://api.github.com/users/hamids-ai-automations/packages?package_type=pypi: {\"message\":\"The package_type parameter is invalid.\",\"documentation_url\":\"https://docs.github.com/rest/packages/packages#list-packages-for-a-user\",\"status\":\"422\"}"
       ]
@@ -59,18 +59,18 @@
       }
     },
     "statistics": {
-      "public_repos": 96,
+      "public_repos": 98,
       "public_gists": 0,
       "followers": 4,
       "following": 1,
-      "owned_repositories_graphql": 96,
-      "starred_repositories": 22,
-      "total_contributions_last_year": 539,
-      "total_commit_contributions": 271,
+      "owned_repositories_graphql": 98,
+      "starred_repositories": 23,
+      "total_contributions_last_year": 551,
+      "total_commit_contributions": 281,
       "total_issue_contributions": 1,
       "total_pull_request_contributions": 168,
       "total_pull_request_review_contributions": 0,
-      "repositories_with_contributed_commits": 58,
+      "repositories_with_contributed_commits": 60,
       "restricted_contributions": 0
     },
     "pinned_repositories": [
@@ -167,7 +167,7 @@
         "hireable": true,
         "bio": "AI Automation Engineer | MCP servers, agent evals and permission-gated automation | Python. Building open-source agent tooling for real business systems.",
         "twitter_username": null,
-        "public_repos": 96,
+        "public_repos": 98,
         "public_gists": 0,
         "followers": 4,
         "following": 1,
@@ -176,7 +176,7 @@
         "private_gists": 0,
         "total_private_repos": 2,
         "owned_private_repos": 2,
-        "disk_usage": 31379,
+        "disk_usage": 31910,
         "collaborators": 0,
         "two_factor_authentication": true,
         "plan": {
@@ -208,10 +208,10 @@
           "totalCount": 1
         },
         "repositories": {
-          "totalCount": 96
+          "totalCount": 98
         },
         "starredRepositories": {
-          "totalCount": 22
+          "totalCount": 23
         },
         "organizations": {
           "nodes": []
@@ -302,14 +302,14 @@
           ]
         },
         "contributionsCollection": {
-          "totalCommitContributions": 271,
+          "totalCommitContributions": 281,
           "totalIssueContributions": 1,
           "totalPullRequestContributions": 168,
           "totalPullRequestReviewContributions": 0,
-          "totalRepositoriesWithContributedCommits": 58,
+          "totalRepositoriesWithContributedCommits": 60,
           "restrictedContributionsCount": 0,
           "contributionCalendar": {
-            "totalContributions": 539
+            "totalContributions": 551
           }
         }
       }
@@ -354,9 +354,166 @@
     ],
     "achievements_highlights": {},
     "achievements_source": "https://github.com/hamids-ai-automations?tab=achievements",
-    "last_synced": "2026-11-24T23:54:04+00:00"
+    "last_synced": "2026-11-25T11:35:49+00:00"
   },
   "repositories": [
+    {
+      "id": "R_kgDOV7aKCg",
+      "name": "ghl-servicepro-theme",
+      "full_name": "hamids-ai-automations/ghl-servicepro-theme",
+      "url": "https://github.com/hamids-ai-automations/ghl-servicepro-theme",
+      "description": null,
+      "homepage": null,
+      "created_at": "2026-11-25T09:57:09Z",
+      "updated_at": "2026-11-25T10:01:58Z",
+      "pushed_at": "2026-11-25T10:01:53Z",
+      "default_branch": "main",
+      "last_commit_at": "2026-11-25T10:01:53Z",
+      "visibility": "public",
+      "is_private": false,
+      "archived": false,
+      "fork": false,
+      "disabled": false,
+      "is_template": false,
+      "in_organization": false,
+      "license": "MIT",
+      "license_name": "MIT License",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 1790,
+        "JavaScript": 1653
+      },
+      "language_total_size": 3443,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 0,
+      "closed_issues": 0,
+      "open_pull_requests": 0,
+      "merged_pull_requests": 0,
+      "closed_pull_requests": 0,
+      "releases_count": 0,
+      "releases": [],
+      "tags_count": 0,
+      "branches_count": 1,
+      "discussions_count": 0,
+      "deployments_count": 0,
+      "environments_count": 0,
+      "packages_count": 0,
+      "has_issues": true,
+      "has_wiki": true,
+      "has_projects": true,
+      "has_discussions": false,
+      "topics": [],
+      "size_kb": 12,
+      "readme": {
+        "path": "README.md",
+        "html_url": "https://github.com/hamids-ai-automations/ghl-servicepro-theme/blob/main/README.md",
+        "has_readme": true,
+        "length": 14911,
+        "excerpt": "# ServicePro — Premium GoHighLevel Website Theme\n\n> Premium, conversion-focused website theme for local service businesses — HVAC, plumbing, roofing, electrical, cleaning and remodeling contractors. One reusable design system, multiple industry demos, lead-generation layouts, and GHL integration guides.\n\n**Repository positioning:** Premium GoHighLevel website theme for local service businesses, featuring reusable components, conversion-focused landing pages, lead-generation forms, responsive layouts and GHL implementation documentation.\n\n---\n\n## Table of contents\n\n1. [Introduction](#introduction)\n2. [Live demo](#live-demo)\n3. [Features](#features)\n4. [Supported industries](#supported-industries)\n5. [Technology stack](#technology-stack)\n6. [Architecture overview](#architecture-overview)\n7. [Project structure](#project-structure)\n8. [Installation](#installation)\n9. [Configuration](#configuration)\n10. [GHL implementation guide](#ghl-implementation-guide)\n11. [Customization guide](#customization-guide)\n12. [GHL integrations](#ghl-integrations)\n13. [SEO implementation](#seo-implementation)\n14. [Performance](#performance)\n15. [Testing](#testing)\n16. [Deployment](#deployment)\n17. [Roadmap](#roadmap)\n18. [Contributing](#contributing)\n19. [License](#license)\n20. [Developer](#developer)\n21. [Hire Muhammad Hamid](#hire-muhammad-hamid)\n\n---\n\n## Introduction\n\n**ServicePro** is a premium, conversion-focused GoHighLevel website theme built for local service businesses. Rather than publishing a single static template, ServicePro is engineered as a **reusable design system** — one architecture that spins up polished, high-converting websites for any local service industry.\n\nThe repository includes **three complete industry demonstrations** (HVAC, Plumbing, Roofing) that share the same components, layout patterns and conversion structure, each re-themed instantly with its own brand palette, copy, services, testimonials, pricing and FAQ.\n\nThis project serves two purposes:\n\n1. **A ready-to-customize starting point** for agencies and freelancers building GoHighLevel websites for service businesses.\n2. **A portfolio asset** demonstrating Muhammad Hamid's GHL development, conversion design and marketing automation capabilities.\n\n### Value proposition\n\n- **One design system, many industries** — add a new industry by editing a single data file.\n- **Conversion-focused** — every section is designed to generate qualified leads.\n- **Production-grade** — semantic HTML, accessibility, SEO metadata, responsive layouts.\n- **GHL-ready** — documented integration points for forms, CRM, calendars, pipelines and workflows.\n- **Honest** — demo content is clearly labeled as fictional samples; no fake ratings in structured data.\n\n---\n\n## Live demo\n\nA hosted preview of the ServicePro theme is available. Use the industry switcher in the header to toggle between HVAC, Plumbing and Roofing demos live.\n\n> **Note:** This repository contains the external Next.js preview of the design system. The live GoHighLevel implementation is delivered as native GHL elements (custom HTML/CSS sections, GHL forms, calendars, pipelines and workflows) via the documented implementation process in [docs/GHL-IMPLEMENTATION.md](docs/GHL-IMPLEMENTATION.md).\n\n---\n\n## Features\n\n### Conversion optimization\n\n- Strong homepage headline with clear value proposition\n- Prominent phone and contact CTAs in the sticky header\n- Free quote request form with validation and success/error states\n- Booking and consultation CTAs throughout the page\n- Trust-building testimonials (clearly labeled as demo content)\n- \"Why choose us\" section with credibility points\n- Before-and-after project showcase gallery\n- Service coverage area pages\n- FAQ accordion addressing common objections\n- Emergency service CTA banner\n- Repeated conversion opportunities across every section\n- Sticky mobile CTA bar (Call + Free quote) — always one tap away\n- Floating WhatsApp hiring button with pre-filled inquiry messages\n\n### Reusable desig",
+        "full_content_path": null
+      },
+      "readme_full_content": null,
+      "tree": {
+        "truncated": false,
+        "total_files": 12,
+        "total_entries": 13,
+        "top_level_directories": [
+          "prisma"
+        ],
+        "important_files": [
+          "package.json",
+          "tsconfig.json"
+        ],
+        "workflow_files": [],
+        "test_files_count": 0,
+        "ci_enabled": false
+      },
+      "contributors": {
+        "count": 1,
+        "anonymous_included": false
+      },
+      "technology": {
+        "frameworks": [
+          "Next.js",
+          "React",
+          "Tailwind CSS"
+        ],
+        "dependencies": [
+          "@hookform/resolvers",
+          "@prisma/client",
+          "@radix-ui/react-accordion",
+          "@radix-ui/react-alert-dialog",
+          "@radix-ui/react-aspect-ratio",
+          "@radix-ui/react-avatar",
+          "@radix-ui/react-checkbox",
+          "@radix-ui/react-collapsible",
+          "@radix-ui/react-context-menu",
+          "@radix-ui/react-dialog",
+          "@radix-ui/react-dropdown-menu",
+          "@radix-ui/react-hover-card",
+          "@radix-ui/react-label",
+          "@radix-ui/react-menubar",
+          "@radix-ui/react-navigation-menu",
+          "@radix-ui/react-popover",
+          "@radix-ui/react-progress",
+          "@radix-ui/react-radio-group",
+          "@radix-ui/react-scroll-area",
+          "@radix-ui/react-select",
+          "@radix-ui/react-separator",
+          "@radix-ui/react-slider",
+          "@radix-ui/react-slot",
+          "@radix-ui/react-switch",
+          "@radix-ui/react-tabs",
+          "@radix-ui/react-toast",
+          "@radix-ui/react-toggle",
+          "@radix-ui/react-toggle-group",
+          "@radix-ui/react-tooltip",
+          "@tailwindcss/postcss",
+          "@types/react",
+          "@types/react-dom",
+          "class-variance-authority",
+          "clsx",
+          "cmdk",
+          "date-fns",
+          "embla-carousel-react",
+          "eslint",
+          "eslint-config-next",
+          "framer-motion",
+          "input-otp",
+          "lucide-react",
+          "next",
+          "prisma",
+          "react",
+          "react-day-picker",
+          "react-dom",
+          "react-hook-form",
+          "recharts",
+          "sonner",
+          "tailwind-merge",
+          "tailwindcss",
+          "tailwindcss-animate",
+          "tw-animate-css",
+          "typescript",
+          "uuid",
+          "vaul",
+          "zod",
+          "zustand"
+        ],
+        "config_files": [
+          "package.json"
+        ]
+      },
+      "external_links": [
+        "http://localhost:3000`",
+        "https://marvis.web.app/",
+        "https://wa.me/923167417135"
+      ],
+      "documentation_status": "documented",
+      "detail_refreshed_at": "2026-11-25T11:34:48+00:00",
+      "detail_source": "api"
+    },
     {
       "id": "R_kgDOV4S7nw",
       "name": "github-profile-master-record",
@@ -366,9 +523,9 @@
       "homepage": null,
       "created_at": "2026-11-23T05:13:38Z",
       "updated_at": "2026-11-23T05:18:39Z",
-      "pushed_at": "2026-11-24T14:53:16Z",
+      "pushed_at": "2026-11-25T08:31:58Z",
       "default_branch": "main",
-      "last_commit_at": "2026-11-24T14:53:15Z",
+      "last_commit_at": "2026-11-25T08:31:57Z",
       "visibility": "public",
       "is_private": false,
       "archived": false,
@@ -404,20 +561,20 @@
       "has_projects": true,
       "has_discussions": false,
       "topics": [],
-      "size_kb": 3282,
+      "size_kb": 3336,
       "readme": {
         "path": "README.md",
         "html_url": "https://github.com/hamids-ai-automations/github-profile-master-record/blob/main/README.md",
         "has_readme": true,
-        "length": 9681,
-        "excerpt": "# Muhammad Hamid — GitHub Master Record\n\n> Single source of truth for the complete GitHub history of [@hamids-ai-automations](https://github.com/hamids-ai-automations). **Last synchronized:** 2026-11-24T14:53:15+00:00\n\nAI Automation Engineer | MCP servers, agent evals and permission-gated automation | Python. Building open-source agent tooling for real business systems.\n\n[![Automatic Profile Sync](https://github.com/hamids-ai-automations/github-profile-master-record/actions/workflows/automatic-profile-sync.yml/badge.svg)](https://github.com/hamids-ai-automations/github-profile-master-record/actions/workflows/automatic-profile-sync.yml) [![Validate Master Data](https://github.com/hamids-ai-automations/github-profile-master-record/actions/workflows/validate-master-data.yml/badge.svg)](https://github.com/hamids-ai-automations/github-profile-master-record/actions/workflows/validate-master-data.yml) [![Scheduled Full Sync](https://github.com/hamids-ai-automations/github-profile-master-record/actions/workflows/scheduled-full-sync.yml/badge.svg)](https://github.com/hamids-ai-automations/github-profile-master-record/actions/workflows/scheduled-full-sync.yml)\n\n## Profile overview\n\n| Metric | Value |\n| --- | --- |\n| Repositories (owned / forked) | 37 / 59 |\n| Projects documented | 96 |\n| Public gists | 0 |\n| Live websites | 60 |\n| Releases tracked | 7 |\n| External links | 790 |\n| Pull requests authored | 168 |\n| Issues authored | 1 |\n| Commits (last 12 months) | 271 |\n| Total contributions (last 12 months) | 539 |\n| Followers | 4 |\n\n## Main technologies\n\nPython (69.78%), TypeScript (17.07%), JavaScript (3.37%), HTML (2.41%), Go (1.97%), PHP (1.15%), Vue (0.99%), Shell (0.67%)\n\n## Important projects\n\n| Repository | Description | Language | Stars | Forks | Status | Last push |\n| --- | --- | --- | --- | --- | --- | --- |\n| [shopify-growth-mcp](https://github.com/hamids-ai-automations/shopify-growth-mcp) | Production-grade Shopify Growth MCP Server: 61 MCP tools for AI store operations, SEO audits, GEO readiness, deterministic analytics, inventory intelligence, feed quality and safe marketing workflows. Model Context Protocol for Claude, Cursor, VS Code, Codex. TypeScript, MIT. | TypeScript | 1 | 0 | active | 2026-11-23 |\n| [hamids-ai-automations](https://github.com/hamids-ai-automations/hamids-ai-automations) | AI Automation Engineer building open-source agentic systems: MCP servers, eval harnesses, Python automation and API integrations. Portfolio: marvis.web.app | - | 1 | 0 | active | 2026-11-22 |\n| [ghl-automation-engine](https://github.com/hamids-ai-automations/ghl-automation-engine) | Contract-first HighLevel (GoHighLevel) engine: honest pagination, single-flight OAuth refresh, PII-safe logging, signed webhook intake with replay protection, and an offline mock with fault injection. 83 tests, zero runtime dependencies. | Python | 1 | 0 | active | 2026-11-22 |\n| [restock-radar](https://github.com/hamids-ai-automations/restock-radar) | Shopify app for back-in-stock alerts and preorder recovery | JavaScript | 1 | 0 | active | 2026-11-21 |\n| [pinvault-pinterest-downloader](https://github.com/hamids-ai-automations/pinvault-pinterest-downloader) | PinVault — Pinterest image & video downloader: privacy-first Manifest V3 Chrome extension with bulk queue, dedupe and CSV/JSON export | JavaScript | 1 | 0 | active | 2026-11-21 |\n| [hamid-resume](https://github.com/hamids-ai-automations/hamid-resume) | Official professional portfolio and MarTech showcase of Muhammad Hamid (Digital Marketing Head). Deployed live on Firebase Hosting at https://hamid-resume.web.app/. | HTML | 1 | 0 | active | 2026-10-19 |\n| [seo-audit-tool](https://github.com/hamids-ai-automations/seo-audit-tool) | Ethical on-page SEO audit crawler: analyzes titles, meta tags, headings, canonicals, image alt texts, duplicate content, and exports actionable CSVs. | Python | 1 | 0 | active | 2026-10-18 |\n| [ppc-performance-dashboard](https://github.com/hamids-ai-automations/ppc-performa",
+        "length": 9801,
+        "excerpt": "# Muhammad Hamid — GitHub Master Record\n\n> Single source of truth for the complete GitHub history of [@hamids-ai-automations](https://github.com/hamids-ai-automations). **Last synchronized:** 2026-11-25T08:31:56+00:00\n\nAI Automation Engineer | MCP servers, agent evals and permission-gated automation | Python. Building open-source agent tooling for real business systems.\n\n[![Automatic Profile Sync](https://github.com/hamids-ai-automations/github-profile-master-record/actions/workflows/automatic-profile-sync.yml/badge.svg)](https://github.com/hamids-ai-automations/github-profile-master-record/actions/workflows/automatic-profile-sync.yml) [![Validate Master Data](https://github.com/hamids-ai-automations/github-profile-master-record/actions/workflows/validate-master-data.yml/badge.svg)](https://github.com/hamids-ai-automations/github-profile-master-record/actions/workflows/validate-master-data.yml) [![Scheduled Full Sync](https://github.com/hamids-ai-automations/github-profile-master-record/actions/workflows/scheduled-full-sync.yml/badge.svg)](https://github.com/hamids-ai-automations/github-profile-master-record/actions/workflows/scheduled-full-sync.yml)\n\n## Profile overview\n\n| Metric | Value |\n| --- | --- |\n| Repositories (owned / forked) | 38 / 59 |\n| Projects documented | 97 |\n| Public gists | 0 |\n| Live websites | 61 |\n| Releases tracked | 7 |\n| External links | 792 |\n| Pull requests authored | 168 |\n| Issues authored | 1 |\n| Commits (last 12 months) | 279 |\n| Total contributions (last 12 months) | 548 |\n| Followers | 4 |\n\n## Main technologies\n\nPython (69.74%), TypeScript (17.06%), JavaScript (3.42%), HTML (2.41%), Go (1.96%), PHP (1.14%), Vue (0.99%), Shell (0.67%)\n\n## Important projects\n\n| Repository | Description | Language | Stars | Forks | Status | Last push |\n| --- | --- | --- | --- | --- | --- | --- |\n| [shopify-growth-mcp](https://github.com/hamids-ai-automations/shopify-growth-mcp) | Production-grade Shopify Growth MCP Server: 61 MCP tools for AI store operations, SEO audits, GEO readiness, deterministic analytics, inventory intelligence, feed quality and safe marketing workflows. Model Context Protocol for Claude, Cursor, VS Code, Codex. TypeScript, MIT. | TypeScript | 1 | 0 | active | 2026-11-23 |\n| [hamids-ai-automations](https://github.com/hamids-ai-automations/hamids-ai-automations) | AI Automation Engineer building open-source agentic systems: MCP servers, eval harnesses, Python automation and API integrations. Portfolio: marvis.web.app | - | 1 | 0 | active | 2026-11-22 |\n| [ghl-automation-engine](https://github.com/hamids-ai-automations/ghl-automation-engine) | Contract-first HighLevel (GoHighLevel) engine: honest pagination, single-flight OAuth refresh, PII-safe logging, signed webhook intake with replay protection, and an offline mock with fault injection. 83 tests, zero runtime dependencies. | Python | 1 | 0 | active | 2026-11-22 |\n| [restock-radar](https://github.com/hamids-ai-automations/restock-radar) | Shopify app for back-in-stock alerts and preorder recovery | JavaScript | 1 | 0 | active | 2026-11-21 |\n| [pinvault-pinterest-downloader](https://github.com/hamids-ai-automations/pinvault-pinterest-downloader) | PinVault — Pinterest image & video downloader: privacy-first Manifest V3 Chrome extension with bulk queue, dedupe and CSV/JSON export | JavaScript | 1 | 0 | active | 2026-11-21 |\n| [hamid-resume](https://github.com/hamids-ai-automations/hamid-resume) | Official professional portfolio and MarTech showcase of Muhammad Hamid (Digital Marketing Head). Deployed live on Firebase Hosting at https://hamid-resume.web.app/. | HTML | 1 | 0 | active | 2026-10-19 |\n| [seo-audit-tool](https://github.com/hamids-ai-automations/seo-audit-tool) | Ethical on-page SEO audit crawler: analyzes titles, meta tags, headings, canonicals, image alt texts, duplicate content, and exports actionable CSVs. | Python | 1 | 0 | active | 2026-10-18 |\n| [ppc-performance-dashboard](https://github.com/hamids-ai-automations/ppc-performa",
         "full_content_path": null
       },
       "readme_full_content": null,
       "tree": {
         "truncated": false,
-        "total_files": 359,
-        "total_entries": 378,
+        "total_files": 369,
+        "total_entries": 388,
         "top_level_directories": [
           ".github",
           "achievements",
@@ -453,6 +610,7 @@
       "external_links": [
         "https://hamid-resume.web.app/",
         "https://marvis.web.app",
+        "https://marvis.web.app**",
         "https://hamid-resume.web.app",
         "https://marvis.web.app/projects/leadflow-sentinel",
         "https://abouthamid.web.app",
@@ -465,12 +623,119 @@
         "https://airkube-dashboard-a4410b460d07.herokuapp.com",
         "https://google.github.io/sbsim",
         "https://gitwyd.github.io/sbsim_documentation",
-        "https://pypi.org/project/pubchem-finder",
         "https://api.github.com/users/hamids-ai-automations/packages?package_type=pypi",
         "https://docs.github.com/rest/packages/packages#list-packages-for-a-user"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T23:53:45+00:00",
+      "detail_refreshed_at": "2026-11-25T11:34:48+00:00",
+      "detail_source": "api"
+    },
+    {
+      "id": "R_kgDOV6509w",
+      "name": "marvis-portfolio",
+      "full_name": "hamids-ai-automations/marvis-portfolio",
+      "url": "https://github.com/hamids-ai-automations/marvis-portfolio",
+      "description": "Automated GitHub-driven portfolio for Muhammad Hamid — AI Automation Engineer. Static site generated from github-profile-master-record and deployed to Firebase Hosting.",
+      "homepage": null,
+      "created_at": "2026-11-25T01:04:26Z",
+      "updated_at": "2026-11-25T03:57:01Z",
+      "pushed_at": "2026-11-25T07:02:51Z",
+      "default_branch": "main",
+      "last_commit_at": "2026-11-25T07:02:45Z",
+      "visibility": "public",
+      "is_private": false,
+      "archived": false,
+      "fork": false,
+      "disabled": false,
+      "is_template": false,
+      "in_organization": false,
+      "license": null,
+      "license_name": null,
+      "language": "JavaScript",
+      "languages": {
+        "JavaScript": 213102,
+        "CSS": 32382
+      },
+      "language_total_size": 245484,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 0,
+      "closed_issues": 0,
+      "open_pull_requests": 0,
+      "merged_pull_requests": 0,
+      "closed_pull_requests": 0,
+      "releases_count": 0,
+      "releases": [],
+      "tags_count": 0,
+      "branches_count": 1,
+      "discussions_count": 0,
+      "deployments_count": 10,
+      "environments_count": 1,
+      "packages_count": 0,
+      "has_issues": true,
+      "has_wiki": true,
+      "has_projects": true,
+      "has_discussions": false,
+      "topics": [],
+      "size_kb": 465,
+      "readme": {
+        "path": "README.md",
+        "html_url": "https://github.com/hamids-ai-automations/marvis-portfolio/blob/main/README.md",
+        "has_readme": true,
+        "length": 3956,
+        "excerpt": "# marvis-portfolio\n\nProduction site for **Muhammad Hamid** — Digital Marketing Head moving into AI automation\nengineering. Live at **https://marvis.web.app**.\n\nA dependency-free static site generator: Node 20, ES modules, zero npm packages. The build reads a\ncommitted snapshot of a GitHub \"master record\" and renders 38 routes, then a validator gates the\noutput on links, SEO, and contact policy before anything reaches Firebase Hosting.\n\n## Why it exists\n\nThe portfolio is generated, not hand-written. Facts about projects come from\n`hamids-ai-automations/github-profile-master-record` (`MASTER_DATABASE.json`), so the site cannot\ndrift from the repositories it describes. A daily workflow refreshes the snapshot, and any change to\nthe record hash triggers a rebuild and deploy.\n\n## Page inventory\n\n| Section | Routes |\n| --- | --- |\n| Home | `/` |\n| Work index | `/projects/` |\n| Projects | 19 curated case pages (`/projects/<slug>/`) |\n| Writing index | `/articles/` |\n| Articles | 4 long-form pieces (`/articles/<slug>/`) |\n| Services index | `/services/` |\n| Services | 6 offers (`/services/<slug>/`) |\n| About / Contact | `/about/`, `/contact/` |\n| Legal | `/privacy/`, `/terms/` |\n| Machine surfaces | `/sitemap.xml` (35 URLs), `/robots.txt`, `/llms.txt`, `/data/projects.json`, `/site.webmanifest`, `/404.html` |\n\n## Quick start\n\n```bash\nnpm run build      # render dist/\nnpm run validate   # gate the output\nnpm test           # 30 unit tests\nnpm run serve      # preview at http://localhost:5000 with Firebase-like routing\nnpm run ci         # build + validate + test — run before every push\n```\n\nNo install step is required: the project has no dependencies.\n\n## Structure\n\n```\ndata/          committed snapshot of the master record (source of truth)\nscripts/       sync, build entry, validate gate, local server\nsrc/lib/       data parsing, normalisation, model, layout, SEO, markdown\nsrc/pages/     one renderer per page family\nsrc/content/   site copy, services, articles, curated project overrides\nsrc/templates/ cards and shared components\nsrc/styles.css the entire stylesheet\ntests/         node:test suites\ndist/          generated output (never edit)\n```\n\n## Content rules\n\n- Every project claim traces to the master record or to a curated override that restates a verified\n  field from it.\n- WhatsApp `+923167417135` is the only contact channel: no forms, no email links, no phone-call CTAs.\n- Every page carries a unique title, a unique meta description, a canonical URL, exactly one `<h1>`,\n  JSON-LD where applicable, and a WhatsApp CTA.\n- Forks, the profile-README repository, and repositories without a description or README are never\n  published. Homepages that point back at this site or at the repository itself are dropped.\n- Content works without JavaScript.\n\n## Deployment\n\nFirebase Hosting, site `marvis`, project `my-1st-web-app-ef52d` (Spark plan, hosting only).\n\n```bash\nnpm run deploy           # ci + deploy --only hosting:marvis\nnpm run deploy:preview   # 7-day preview channel\n```\n\nCI/CD lives in `.github/workflows/`: `ci.yml` (build/validate/test), `deploy.yml` (live deploy on\npush to `main`), `sync-master-record.yml` (daily snapshot refresh), `live-check.yml` (weekly\nproduction smoke test). The deploy workflow needs the `FIREBASE_SERVICE_ACCOUNT` secret — see\n[docs/OPERATIONS.md](docs/OPERATIONS.md).\n\n## Documentation\n\n| Document | Contents |\n| --- | --- |\n| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Layers, data flow, inclusion rules, routing, invariants |\n| [docs/OPERATIONS.md](docs/OPERATIONS.md) | Commands, deploy and rollback, CI secrets, troubleshooting |\n| [docs/AUTONOMY.md](docs/AUTONOMY.md) | Standing authorization for autonomous work in this repo |\n| [AGENTS.md](AGENTS.md) | Hard facts and rules for agents and contributors |\n\n## Contact\n\nWhatsApp: [+92 316 7417135](https://wa.me/923167417135) — the only contact channel.\n\n## License\n\nUNLICENSED — private project. All rights reserved.\n",
+        "full_content_path": null
+      },
+      "readme_full_content": null,
+      "tree": {
+        "truncated": false,
+        "total_files": 51,
+        "total_entries": 63,
+        "top_level_directories": [
+          ".github",
+          "data",
+          "docs",
+          "scripts",
+          "src",
+          "tests"
+        ],
+        "important_files": [
+          ".firebaserc",
+          "firebase.json",
+          "package.json"
+        ],
+        "workflow_files": [
+          ".github/workflows/ci.yml",
+          ".github/workflows/deploy.yml",
+          ".github/workflows/live-check.yml",
+          ".github/workflows/sync-master-record.yml"
+        ],
+        "test_files_count": 6,
+        "ci_enabled": true
+      },
+      "contributors": {
+        "count": 1,
+        "anonymous_included": false
+      },
+      "technology": {
+        "frameworks": [
+          "Firebase",
+          "MCP"
+        ],
+        "dependencies": [],
+        "config_files": [
+          "package.json",
+          "firebase.json"
+        ]
+      },
+      "external_links": [
+        "https://marvis.web.app**",
+        "http://localhost:5000",
+        "https://wa.me/923167417135"
+      ],
+      "documentation_status": "documented",
+      "detail_refreshed_at": "2026-11-25T11:34:48+00:00",
       "detail_source": "api"
     },
     {
@@ -481,7 +746,7 @@
       "description": "Enterprise operations console and reference control plane for the ServiceNow Ultimate MCP server - ITSM, CMDB, workflows, analytics and an LLM-powered natural-language query console.",
       "homepage": "https://marvis.web.app",
       "created_at": "2026-11-24T00:46:26Z",
-      "updated_at": "2026-11-24T00:50:06Z",
+      "updated_at": "2026-11-25T10:07:19Z",
       "pushed_at": "2026-11-24T00:58:38Z",
       "default_branch": "main",
       "last_commit_at": "2026-11-24T00:58:35Z",
@@ -501,7 +766,7 @@
         "JavaScript": 1728
       },
       "language_total_size": 370489,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "watchers": 0,
       "open_issues": 0,
@@ -661,8 +926,8 @@
         "https://wa.me/923167417135"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:31+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:48+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVaAF6A",
@@ -800,8 +1065,8 @@
         "https://m8ven.ai/mcp/hamid-digitalmarketer-shopify-growth-mcp-14q9ul?s=readme"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:32+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:48+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV3mnag",
@@ -905,8 +1170,8 @@
         "https://marvis.web.app/projects/leadflow-sentinel"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:32+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:48+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVFVIqA",
@@ -999,8 +1264,8 @@
         "https://wa.me/923167417135"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:31+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:48+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV294pA",
@@ -1107,8 +1372,8 @@
       },
       "external_links": [],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:32+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:48+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV3y_UA",
@@ -1307,8 +1572,8 @@
         "https://marvis.web.app/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:31+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:50+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV2H9tg",
@@ -1412,8 +1677,8 @@
         "https://me.developers.google.com/u/hamidautomations"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:31+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:50+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVXn9SQ",
@@ -1537,8 +1802,8 @@
         "https://restock-radar.example.com"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:34+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:51+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVxlzHg",
@@ -1682,8 +1947,8 @@
         "https://wa.me/923074647635`"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:35+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:51+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVedz1A",
@@ -1861,8 +2126,8 @@
         "http://localhost:3000"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:35+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:51+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVdUKGQ",
@@ -1962,8 +2227,8 @@
       },
       "external_links": [],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:35+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:54+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVOCTiA",
@@ -2107,8 +2372,8 @@
         "https://www.googleapis.com/auth/webmasters.readonly`"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:35+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:53+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVQvC9A",
@@ -2220,8 +2485,8 @@
         "https://wa.me/923167417135"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:37+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:53+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVOhebA",
@@ -2344,8 +2609,8 @@
         "https://hamid-resume.web.app/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:38+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:54+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV2ULAA",
@@ -2475,8 +2740,8 @@
         "https://wa.me/923167417135"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:38+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:54+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV2rQCQ",
@@ -2577,8 +2842,8 @@
       },
       "external_links": [],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:38+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:54+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV2gYQw",
@@ -2689,8 +2954,8 @@
         "https://modelcontextprotocol.io"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:38+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:56+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV1l5hw",
@@ -2809,8 +3074,8 @@
         "https://marvis.web.app/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:38+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:56+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV1pT_w",
@@ -2911,8 +3176,8 @@
       },
       "external_links": [],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:40+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:57+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVIk0wQ",
@@ -3026,8 +3291,8 @@
         "https://wa.me/923167417135?text=Hello%20Hamid%2C%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20job%20opportunity%20or%20project"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:02+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:19+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVPAntw",
@@ -3152,8 +3417,8 @@
         "https://wa.me/923167417135"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:03+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:20+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVO_MQw",
@@ -3287,8 +3552,8 @@
         "https://example.com/consultation"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:03+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:20+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVFaXWw",
@@ -3405,8 +3670,8 @@
         "https://wa.me/923167417135"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:04+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:21+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVFa1rg",
@@ -3520,8 +3785,8 @@
         "https://wa.me/923167417135"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:04+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:20+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVFgywQ",
@@ -3634,8 +3899,8 @@
         "https://wa.me/923167417135"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:04+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:21+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVFi44A",
@@ -3762,8 +4027,8 @@
         "http://localhost:8000/dashboard"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:04+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:22+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVMt_Sg",
@@ -3878,8 +4143,8 @@
       },
       "external_links": [],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:05+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:22+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVK72jg",
@@ -3980,8 +4245,8 @@
         "https://python.org"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:05+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:22+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVN1Lzg",
@@ -4092,8 +4357,8 @@
         "https://example.com"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:06+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:22+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVK72GA",
@@ -4212,8 +4477,8 @@
         "https://docs.pydantic.dev"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:06+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:22+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVFpFUA",
@@ -4336,8 +4601,8 @@
         "http://127.0.0.1:8000/sitemap.xml"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:07+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:23+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVFr4KQ",
@@ -4458,8 +4723,8 @@
         "https://www.apexdentalcare-example.com"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:07+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:24+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVFr30w",
@@ -4581,8 +4846,8 @@
         "http://localhost:8000`"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:07+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:24+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVFr3iA",
@@ -4705,8 +4970,8 @@
         "http://localhost:8000`"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:07+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:24+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVFr3Pg",
@@ -4828,8 +5093,8 @@
         "http://localhost:8000`"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:08+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:25+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVFlfWg",
@@ -4967,8 +5232,8 @@
         "http://localhost:8000/docs"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:08+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:28+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV3vOhA",
@@ -5089,8 +5354,8 @@
         "https://docs.python.org/3/library/asyncio.html"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:35+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:51+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV3VphQ",
@@ -5186,8 +5451,8 @@
         "https://pestphp.com/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:35+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:51+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV3QmVQ",
@@ -5317,8 +5582,8 @@
         "http://localhost:3001/preview`"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:35+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:51+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV2KJ9Q",
@@ -5424,8 +5689,8 @@
         "http://localhost:8000"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:38+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:54+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOV2rUiQ",
@@ -5568,8 +5833,8 @@
         "https://mcp-toolbox.dev/documentation/configuration/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:38+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:54+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVqInGQ",
@@ -5700,8 +5965,8 @@
         "http://127.0.0.1:8000/mcp"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:40+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:57+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVb74mg",
@@ -5829,8 +6094,8 @@
       },
       "external_links": [],
       "documentation_status": "no_readme",
-      "detail_refreshed_at": "2026-11-24T12:49:40+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:57+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVaeg9w",
@@ -5935,7 +6200,7 @@
         "ci_enabled": true
       },
       "contributors": {
-        "count": 35,
+        "count": 36,
         "anonymous_included": false
       },
       "technology": {
@@ -5960,8 +6225,8 @@
         "https://opnform.com/terms-conditions"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:41+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:58+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVbCIDw",
@@ -6087,8 +6352,8 @@
         "http://localhost:8080`"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:41+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:57+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVa_nmw",
@@ -6196,8 +6461,8 @@
         "https://www.tensorflow.org/agents"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:41+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:58+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVcAOcw",
@@ -6410,8 +6675,8 @@
         "https://vibgrate.com/glossary/sbom"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:41+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:00+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVhZr5g",
@@ -6522,8 +6787,8 @@
         "https://raw.githubusercontent.com/pygrpc/pygrpc-native/main/assets/benchmark.gif"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:41+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:34:59+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVa_XHg",
@@ -6640,8 +6905,8 @@
         "https://linkedin.com/in/iamvisheshsrivastava"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:44+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:00+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVbA2Xw",
@@ -6756,8 +7021,8 @@
         "https://render.com"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:44+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:00+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVdPeuQ",
@@ -6884,8 +7149,8 @@
         "https://www.sigwac.org.uk/wiki/WAC-X"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:44+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:00+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVfSanA",
@@ -7000,8 +7265,8 @@
         "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-15"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:44+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:00+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVdxCCQ",
@@ -7152,8 +7417,8 @@
         "https://example.com/api/docs-feedback"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:44+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:01+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVdK0qA",
@@ -7322,8 +7587,8 @@
         "https://finos.github.io/open-resource-broker/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:45+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:01+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVnyV-A",
@@ -7441,8 +7706,8 @@
         "https://contrib.rocks/image?repo=laaielichter/Gulliver"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:44+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:03+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVnwqrw",
@@ -7660,8 +7925,8 @@
         "https://openmed.life"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:45+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:03+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVa4tyw",
@@ -7786,8 +8051,8 @@
         "https://tsoa-community.github.io/docs/getting-started"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:47+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:03+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVfBCbw",
@@ -7907,8 +8172,8 @@
         "https://sentryward.example.com/api/reviews/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:47+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:04+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVfFbRw",
@@ -8047,8 +8312,8 @@
         "http://collector:4318`"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:47+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:03+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVe6D3A",
@@ -8211,8 +8476,8 @@
         "https://discord.gg/zrsNMEzmCj"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:47+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:04+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOViPt6A",
@@ -8324,8 +8589,8 @@
         "https://shields.io/badges/endpoint-badge"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:47+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:04+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOViRvyA",
@@ -8469,8 +8734,8 @@
         "https://docs.proteanhq.com/community/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:48+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:05+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVh4owg",
@@ -8598,8 +8863,8 @@
         "https://doi.org/10.5281/zenodo.23426564"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:48+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:06+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVh8piQ",
@@ -8693,8 +8958,8 @@
       },
       "external_links": [],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:49+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:06+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVaje3w",
@@ -8813,8 +9078,8 @@
         "https://docs.astral.sh/uv/concepts/projects/workspaces/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:50+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:07+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVfVgTg",
@@ -8962,8 +9227,8 @@
         "https://keepachangelog.com/en/1.1.0/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:50+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:07+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVfPVrQ",
@@ -9111,8 +9376,8 @@
         "https://aws.amazon.com/migration-evaluator/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:51+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:07+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVfRj2Q",
@@ -9260,8 +9525,8 @@
         "http://127.0.0.1:8000/agent-ui`"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:51+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:07+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVdzo-A",
@@ -9372,8 +9637,8 @@
         "https://stellar.org/community"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:51+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:08+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVaXvgg",
@@ -9529,8 +9794,8 @@
         "https://opencomplai.com"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:51+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:08+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVdipwg",
@@ -9686,8 +9951,8 @@
         "https://reuse.software/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:52+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:09+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVe8Vnw",
@@ -9831,8 +10096,8 @@
         "https://transparencycascade.org"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:52+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:10+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVaBbDA",
@@ -9995,8 +10260,8 @@
         "https://kossnocorp.mit-license.org/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:53+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:10+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVblopw",
@@ -10110,8 +10375,8 @@
         "https://tallysolutions.com/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:54+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:10+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVcAUPQ",
@@ -10216,8 +10481,8 @@
         "https://avatars.githubusercontent.com/u/210186755?v=4?s=80"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:54+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:10+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVd6BKw",
@@ -10463,8 +10728,8 @@
         "https://frappe.io/files/Frappe-black.png"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:55+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:12+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVd2yZA",
@@ -10562,8 +10827,8 @@
       },
       "external_links": [],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:54+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:11+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVdkUng",
@@ -10756,8 +11021,8 @@
         "https://datamodel-code-generator.koxudaxi.dev/python-client/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:55+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:13+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVazoEQ",
@@ -10956,8 +11221,8 @@
         "https://opencollective.com/dayjs#backers"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:55+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:12+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVbMBzw",
@@ -11103,8 +11368,8 @@
         "https://trunkbaseddevelopment.com/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:55+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:13+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVdUBjQ",
@@ -11372,8 +11637,8 @@
         "https://docs.agent-swarm.dev/docs/architecture/overview"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:58+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:13+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVdDTHg",
@@ -11470,8 +11735,8 @@
         "https://pypi.org/project/wn/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:57+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:13+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVbzSeA",
@@ -11586,8 +11851,8 @@
         "https://imgproxykit.readthedocs.io/en/latest/pages/changelog.html"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:57+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:13+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVbVT7g",
@@ -11727,8 +11992,8 @@
         "https://render.com"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:57+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:14+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVbrDOw",
@@ -11873,8 +12138,8 @@
         "https://www.exmergo.com/connectors/duckdb.png"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:58+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:15+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVbu1Pg",
@@ -12002,8 +12267,8 @@
         "https://peps.python.org/pep-0619/#310-lifespan"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:58+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:16+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVbnOlw",
@@ -12100,8 +12365,8 @@
         "https://docs.astral.sh/uv/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:58+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:17+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVbPBCg",
@@ -12229,8 +12494,8 @@
         "https://en.wikipedia.org/wiki/Pure_function"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:49:59+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:16+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVbSz2g",
@@ -12349,8 +12614,8 @@
         "https://pyyaml.org/wiki/PyYAMLDocumentation"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:00+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:16+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVbFNvA",
@@ -12447,8 +12712,8 @@
         "https://medium.com/@dirk.avery/securing-files-on-windows-macos-and-linux-7b2b9899992"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:00+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:16+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVaB_dA",
@@ -12590,7 +12855,7 @@
         "ci_enabled": true
       },
       "contributors": {
-        "count": 323,
+        "count": 322,
         "anonymous_included": false
       },
       "technology": {
@@ -12684,8 +12949,8 @@
         "https://www.gnu.org/licenses/agpl-3.0.html"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:01+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:17+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVapqEA",
@@ -12821,8 +13086,8 @@
         "https://api.star-history.com/chart?repos=aden-hive/hive&type=date&legend=top-left&sealed_token=vfX1DG8w_KTkonUUtIEjFRLvBopgDzxQpyb8hiYT22sobcDIpvQiMciZghLsDu5hyU3LJs-ZddFjl8eYFx5zRrY-kcMRsfyQ3vAiacsroPoqgRYmZaES3Q"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:01+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:17+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVa7HZw",
@@ -12961,8 +13226,8 @@
         "https://rich.readthedocs.io/en/latest/traceback.html"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:01+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:19+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVafrQA",
@@ -13136,8 +13401,8 @@
         "https://docs.cuga.dev/docs/build/cuga-agent/"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:02+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:19+00:00",
+      "detail_source": "api"
     },
     {
       "id": "R_kgDOVaZ20Q",
@@ -13269,15 +13534,29 @@
         "https://api.star-history.com/chart?repos=dpro-at/tel-agent&type=date&legend=top-left"
       ],
       "documentation_status": "documented",
-      "detail_refreshed_at": "2026-11-24T12:50:02+00:00",
-      "detail_source": "cached"
+      "detail_refreshed_at": "2026-11-25T11:35:20+00:00",
+      "detail_source": "api"
     }
   ],
   "projects": [
     {
+      "name": "ghl-servicepro-theme",
+      "full_name": "hamids-ai-automations/ghl-servicepro-theme",
+      "url": "https://github.com/hamids-ai-automations/ghl-servicepro-theme",
+      "documentation": null,
+      "status": "active"
+    },
+    {
       "name": "github-profile-master-record",
       "full_name": "hamids-ai-automations/github-profile-master-record",
       "url": "https://github.com/hamids-ai-automations/github-profile-master-record",
+      "documentation": null,
+      "status": "active"
+    },
+    {
+      "name": "marvis-portfolio",
+      "full_name": "hamids-ai-automations/marvis-portfolio",
+      "url": "https://github.com/hamids-ai-automations/marvis-portfolio",
       "documentation": null,
       "status": "active"
     },
@@ -16664,8 +16943,8 @@
     "reviews_last_year": 0,
     "discussions_authored": 0,
     "discussion_comments": 0,
-    "commits_last_year": 271,
-    "contributions_last_year": 539
+    "commits_last_year": 281,
+    "contributions_last_year": 551
   },
   "reviews": {
     "total": 0,
@@ -16681,11 +16960,11 @@
   },
   "commits": {
     "window": {
-      "from": "2025-11-24T23:53:54Z",
-      "to": "2026-11-24T23:53:54Z"
+      "from": "2025-11-25T11:35:36Z",
+      "to": "2026-11-25T11:35:36Z"
     },
-    "total_commits": 271,
-    "total_contributions": 539,
+    "total_commits": 281,
+    "total_contributions": 551,
     "by_repository": [
       {
         "repository": "hamids-ai-automations/hamids-ai-automations",
@@ -16703,6 +16982,11 @@
         "commits": 11
       },
       {
+        "repository": "hamids-ai-automations/ai-marketing-growth-os",
+        "url": "https://github.com/hamids-ai-automations/ai-marketing-growth-os",
+        "commits": 10
+      },
+      {
         "repository": "hamids-ai-automations/seo-doctor",
         "url": "https://github.com/hamids-ai-automations/seo-doctor",
         "commits": 10
@@ -16710,11 +16994,6 @@
       {
         "repository": "hamids-ai-automations/ghl-automation-engine",
         "url": "https://github.com/hamids-ai-automations/ghl-automation-engine",
-        "commits": 10
-      },
-      {
-        "repository": "hamids-ai-automations/ai-marketing-growth-os",
-        "url": "https://github.com/hamids-ai-automations/ai-marketing-growth-os",
         "commits": 10
       },
       {
@@ -16748,8 +17027,8 @@
         "commits": 9
       },
       {
-        "repository": "hamids-ai-automations/meta-lead-quality-analyzer",
-        "url": "https://github.com/hamids-ai-automations/meta-lead-quality-analyzer",
+        "repository": "hamids-ai-automations/ecommerce-seo-optimizer",
+        "url": "https://github.com/hamids-ai-automations/ecommerce-seo-optimizer",
         "commits": 8
       },
       {
@@ -16758,19 +17037,19 @@
         "commits": 8
       },
       {
+        "repository": "hamids-ai-automations/meta-lead-quality-analyzer",
+        "url": "https://github.com/hamids-ai-automations/meta-lead-quality-analyzer",
+        "commits": 8
+      },
+      {
+        "repository": "hamids-ai-automations/marvis-portfolio",
+        "url": "https://github.com/hamids-ai-automations/marvis-portfolio",
+        "commits": 8
+      },
+      {
         "repository": "vibgrate/cli",
         "url": "https://github.com/vibgrate/cli",
         "commits": 8
-      },
-      {
-        "repository": "hamids-ai-automations/ecommerce-seo-optimizer",
-        "url": "https://github.com/hamids-ai-automations/ecommerce-seo-optimizer",
-        "commits": 8
-      },
-      {
-        "repository": "hamids-ai-automations/ai-marketing-mix-copilot",
-        "url": "https://github.com/hamids-ai-automations/ai-marketing-mix-copilot",
-        "commits": 7
       },
       {
         "repository": "hamids-ai-automations/pinvault-pinterest-downloader",
@@ -16788,14 +17067,14 @@
         "commits": 7
       },
       {
+        "repository": "hamids-ai-automations/ai-marketing-mix-copilot",
+        "url": "https://github.com/hamids-ai-automations/ai-marketing-mix-copilot",
+        "commits": 7
+      },
+      {
         "repository": "hamids-ai-automations/seo-audit-tool",
         "url": "https://github.com/hamids-ai-automations/seo-audit-tool",
         "commits": 6
-      },
-      {
-        "repository": "hamids-ai-automations/nexgen-financial-experts",
-        "url": "https://github.com/hamids-ai-automations/nexgen-financial-experts",
-        "commits": 5
       },
       {
         "repository": "nikhilb2/simple-invoicing-free-gst-billing-software",
@@ -16808,19 +17087,14 @@
         "commits": 5
       },
       {
+        "repository": "hamids-ai-automations/nexgen-financial-experts",
+        "url": "https://github.com/hamids-ai-automations/nexgen-financial-experts",
+        "commits": 5
+      },
+      {
         "repository": "selimfirat/pysad",
         "url": "https://github.com/selimfirat/pysad",
         "commits": 4
-      },
-      {
-        "repository": "hamids-ai-automations/envscope",
-        "url": "https://github.com/hamids-ai-automations/envscope",
-        "commits": 3
-      },
-      {
-        "repository": "iamvisheshsrivastava/AirKube",
-        "url": "https://github.com/iamvisheshsrivastava/AirKube",
-        "commits": 3
       },
       {
         "repository": "iamvisheshsrivastava/Smart_CSV_Toolkit",
@@ -16828,13 +17102,8 @@
         "commits": 3
       },
       {
-        "repository": "rdlugs/sentryward",
-        "url": "https://github.com/rdlugs/sentryward",
-        "commits": 3
-      },
-      {
-        "repository": "mikesilvers/rag-docker",
-        "url": "https://github.com/mikesilvers/rag-docker",
+        "repository": "hamids-ai-automations/envscope",
+        "url": "https://github.com/hamids-ai-automations/envscope",
         "commits": 3
       },
       {
@@ -16843,18 +17112,23 @@
         "commits": 3
       },
       {
-        "repository": "hamids-ai-automations/ai-marketing-portfolio-meta",
-        "url": "https://github.com/hamids-ai-automations/ai-marketing-portfolio-meta",
-        "commits": 2
+        "repository": "mikesilvers/rag-docker",
+        "url": "https://github.com/mikesilvers/rag-docker",
+        "commits": 3
       },
       {
-        "repository": "hamids-ai-automations/conversionbridge",
-        "url": "https://github.com/hamids-ai-automations/conversionbridge",
-        "commits": 2
+        "repository": "iamvisheshsrivastava/AirKube",
+        "url": "https://github.com/iamvisheshsrivastava/AirKube",
+        "commits": 3
       },
       {
-        "repository": "doobidoo/mcp-memory-service",
-        "url": "https://github.com/doobidoo/mcp-memory-service",
+        "repository": "rdlugs/sentryward",
+        "url": "https://github.com/rdlugs/sentryward",
+        "commits": 3
+      },
+      {
+        "repository": "hamids-ai-automations/ghl-servicepro-theme",
+        "url": "https://github.com/hamids-ai-automations/ghl-servicepro-theme",
         "commits": 2
       },
       {
@@ -16883,8 +17157,23 @@
         "commits": 2
       },
       {
+        "repository": "hamids-ai-automations/ai-marketing-portfolio-meta",
+        "url": "https://github.com/hamids-ai-automations/ai-marketing-portfolio-meta",
+        "commits": 2
+      },
+      {
+        "repository": "hamids-ai-automations/conversionbridge",
+        "url": "https://github.com/hamids-ai-automations/conversionbridge",
+        "commits": 2
+      },
+      {
         "repository": "iamvisheshsrivastava/ab-lab",
         "url": "https://github.com/iamvisheshsrivastava/ab-lab",
+        "commits": 2
+      },
+      {
+        "repository": "doobidoo/mcp-memory-service",
+        "url": "https://github.com/doobidoo/mcp-memory-service",
         "commits": 2
       },
       {
@@ -16903,6 +17192,61 @@
         "commits": 2
       },
       {
+        "repository": "adbar/trafilatura",
+        "url": "https://github.com/adbar/trafilatura",
+        "commits": 1
+      },
+      {
+        "repository": "hamids-ai-automations/gemini-agent-reliability-kit",
+        "url": "https://github.com/hamids-ai-automations/gemini-agent-reliability-kit",
+        "commits": 1
+      },
+      {
+        "repository": "hamids-ai-automations/restock-radar",
+        "url": "https://github.com/hamids-ai-automations/restock-radar",
+        "commits": 1
+      },
+      {
+        "repository": "hamids-ai-automations/dynamic-schema-generator",
+        "url": "https://github.com/hamids-ai-automations/dynamic-schema-generator",
+        "commits": 1
+      },
+      {
+        "repository": "laaielichter/Gulliver",
+        "url": "https://github.com/laaielichter/Gulliver",
+        "commits": 1
+      },
+      {
+        "repository": "MysterionRise/pubchem-finder",
+        "url": "https://github.com/MysterionRise/pubchem-finder",
+        "commits": 1
+      },
+      {
+        "repository": "connabyss/bite",
+        "url": "https://github.com/connabyss/bite",
+        "commits": 1
+      },
+      {
+        "repository": "VOLPAROSSA/volparossa-code",
+        "url": "https://github.com/VOLPAROSSA/volparossa-code",
+        "commits": 1
+      },
+      {
+        "repository": "hamids-ai-automations/ai-agent-testing-lab",
+        "url": "https://github.com/hamids-ai-automations/ai-agent-testing-lab",
+        "commits": 1
+      },
+      {
+        "repository": "pygrpc/pygrpc-native",
+        "url": "https://github.com/pygrpc/pygrpc-native",
+        "commits": 1
+      },
+      {
+        "repository": "OpnForm/OpnForm",
+        "url": "https://github.com/OpnForm/OpnForm",
+        "commits": 1
+      },
+      {
         "repository": "exmergo/dex",
         "url": "https://github.com/exmergo/dex",
         "commits": 1
@@ -16913,68 +17257,13 @@
         "commits": 1
       },
       {
-        "repository": "laaielichter/Gulliver",
-        "url": "https://github.com/laaielichter/Gulliver",
-        "commits": 1
-      },
-      {
-        "repository": "hamids-ai-automations/ai-agent-testing-lab",
-        "url": "https://github.com/hamids-ai-automations/ai-agent-testing-lab",
-        "commits": 1
-      },
-      {
         "repository": "cfgaudit/cfgaudit",
         "url": "https://github.com/cfgaudit/cfgaudit",
         "commits": 1
       },
       {
-        "repository": "adbar/trafilatura",
-        "url": "https://github.com/adbar/trafilatura",
-        "commits": 1
-      },
-      {
-        "repository": "MysterionRise/pubchem-finder",
-        "url": "https://github.com/MysterionRise/pubchem-finder",
-        "commits": 1
-      },
-      {
-        "repository": "pygrpc/pygrpc-native",
-        "url": "https://github.com/pygrpc/pygrpc-native",
-        "commits": 1
-      },
-      {
-        "repository": "connabyss/bite",
-        "url": "https://github.com/connabyss/bite",
-        "commits": 1
-      },
-      {
-        "repository": "hamids-ai-automations/dynamic-schema-generator",
-        "url": "https://github.com/hamids-ai-automations/dynamic-schema-generator",
-        "commits": 1
-      },
-      {
-        "repository": "hamids-ai-automations/restock-radar",
-        "url": "https://github.com/hamids-ai-automations/restock-radar",
-        "commits": 1
-      },
-      {
-        "repository": "hamids-ai-automations/gemini-agent-reliability-kit",
-        "url": "https://github.com/hamids-ai-automations/gemini-agent-reliability-kit",
-        "commits": 1
-      },
-      {
         "repository": "supabase/supabase-py",
         "url": "https://github.com/supabase/supabase-py",
-        "commits": 1
-      },
-      {
-        "repository": "VOLPAROSSA/volparossa-code",
-        "url": "https://github.com/VOLPAROSSA/volparossa-code",
-        "commits": 1
-      },
-      {
-        "repository": "OpnForm/OpnForm",
-        "url": "https://github.com/OpnForm/OpnForm",
         "commits": 1
       }
     ],
@@ -17118,6 +17407,10 @@
       {
         "date": "2026-11-24",
         "count": 3
+      },
+      {
+        "date": "2026-11-25",
+        "count": 12
       }
     ]
   },
@@ -17222,6 +17515,20 @@
         "owned_by_profile": false
       },
       {
+        "full_name": "hamids-ai-automations/ai-marketing-growth-os",
+        "url": "https://github.com/hamids-ai-automations/ai-marketing-growth-os",
+        "description": "Autonomous agentic marketing intelligence platform with human-in-the-loop governance and outcome tracking for multi-channel growth.",
+        "owner": "hamids-ai-automations",
+        "is_fork": false,
+        "stars": 1,
+        "language": "Python",
+        "commits": 10,
+        "pull_requests": 0,
+        "issues": 0,
+        "reviews": 0,
+        "owned_by_profile": true
+      },
+      {
         "full_name": "hamids-ai-automations/seo-doctor",
         "url": "https://github.com/hamids-ai-automations/seo-doctor",
         "description": "Open-source technical SEO crawler: broken links, canonical validation, crawl comparison and SEO health scoring. Python CLI.",
@@ -17239,20 +17546,6 @@
         "full_name": "hamids-ai-automations/ghl-automation-engine",
         "url": "https://github.com/hamids-ai-automations/ghl-automation-engine",
         "description": "Contract-first HighLevel (GoHighLevel) engine: honest pagination, single-flight OAuth refresh, PII-safe logging, signed webhook intake with replay protection, and an offline mock with fault injection. 83 tests, zero runtime dependencies.",
-        "owner": "hamids-ai-automations",
-        "is_fork": false,
-        "stars": 1,
-        "language": "Python",
-        "commits": 10,
-        "pull_requests": 0,
-        "issues": 0,
-        "reviews": 0,
-        "owned_by_profile": true
-      },
-      {
-        "full_name": "hamids-ai-automations/ai-marketing-growth-os",
-        "url": "https://github.com/hamids-ai-automations/ai-marketing-growth-os",
-        "description": "Autonomous agentic marketing intelligence platform with human-in-the-loop governance and outcome tracking for multi-channel growth.",
         "owner": "hamids-ai-automations",
         "is_fork": false,
         "stars": 1,
@@ -17348,9 +17641,9 @@
         "owned_by_profile": true
       },
       {
-        "full_name": "hamids-ai-automations/meta-lead-quality-analyzer",
-        "url": "https://github.com/hamids-ai-automations/meta-lead-quality-analyzer",
-        "description": "Open-source lead quality scoring & CRM revenue feedback engine for Meta Ads. Detects fake leads, disposable emails, bot form fatigue, and optimizes Cost-Per-Qualified-Lead (CPQL).",
+        "full_name": "hamids-ai-automations/ecommerce-seo-optimizer",
+        "url": "https://github.com/hamids-ai-automations/ecommerce-seo-optimizer",
+        "description": "Audit and optimize e-commerce product listings at scale. Validates titles, descriptions, pricing, image alt tags, and exports keyword-optimized catalogs.",
         "owner": "hamids-ai-automations",
         "is_fork": false,
         "stars": 1,
@@ -17376,13 +17669,27 @@
         "owned_by_profile": true
       },
       {
-        "full_name": "hamids-ai-automations/ecommerce-seo-optimizer",
-        "url": "https://github.com/hamids-ai-automations/ecommerce-seo-optimizer",
-        "description": "Audit and optimize e-commerce product listings at scale. Validates titles, descriptions, pricing, image alt tags, and exports keyword-optimized catalogs.",
+        "full_name": "hamids-ai-automations/meta-lead-quality-analyzer",
+        "url": "https://github.com/hamids-ai-automations/meta-lead-quality-analyzer",
+        "description": "Open-source lead quality scoring & CRM revenue feedback engine for Meta Ads. Detects fake leads, disposable emails, bot form fatigue, and optimizes Cost-Per-Qualified-Lead (CPQL).",
         "owner": "hamids-ai-automations",
         "is_fork": false,
         "stars": 1,
         "language": "Python",
+        "commits": 8,
+        "pull_requests": 0,
+        "issues": 0,
+        "reviews": 0,
+        "owned_by_profile": true
+      },
+      {
+        "full_name": "hamids-ai-automations/marvis-portfolio",
+        "url": "https://github.com/hamids-ai-automations/marvis-portfolio",
+        "description": "Automated GitHub-driven portfolio for Muhammad Hamid — AI Automation Engineer. Static site generated from github-profile-master-record and deployed to Firebase Hosting.",
+        "owner": "hamids-ai-automations",
+        "is_fork": false,
+        "stars": 0,
+        "language": "JavaScript",
         "commits": 8,
         "pull_requests": 0,
         "issues": 0,
@@ -17395,7 +17702,7 @@
         "description": "Build OpenAPI-compliant REST APIs using TypeScript and Node",
         "owner": "lukeautry",
         "is_fork": false,
-        "stars": 3976,
+        "stars": 3975,
         "language": "TypeScript",
         "commits": 5,
         "pull_requests": 3,
@@ -17416,20 +17723,6 @@
         "issues": 0,
         "reviews": 0,
         "owned_by_profile": false
-      },
-      {
-        "full_name": "hamids-ai-automations/ai-marketing-mix-copilot",
-        "url": "https://github.com/hamids-ai-automations/ai-marketing-mix-copilot",
-        "description": "Production-grade Bayesian Marketing Mix Modeling (MMM) & Causal Incrementality Copilot with Multi-Agent Orchestration and Human-in-the-Loop Governance.",
-        "owner": "hamids-ai-automations",
-        "is_fork": false,
-        "stars": 1,
-        "language": "Python",
-        "commits": 7,
-        "pull_requests": 0,
-        "issues": 0,
-        "reviews": 0,
-        "owned_by_profile": true
       },
       {
         "full_name": "hamids-ai-automations/pinvault-pinterest-downloader",
@@ -17474,6 +17767,20 @@
         "owned_by_profile": true
       },
       {
+        "full_name": "hamids-ai-automations/ai-marketing-mix-copilot",
+        "url": "https://github.com/hamids-ai-automations/ai-marketing-mix-copilot",
+        "description": "Production-grade Bayesian Marketing Mix Modeling (MMM) & Causal Incrementality Copilot with Multi-Agent Orchestration and Human-in-the-Loop Governance.",
+        "owner": "hamids-ai-automations",
+        "is_fork": false,
+        "stars": 1,
+        "language": "Python",
+        "commits": 7,
+        "pull_requests": 0,
+        "issues": 0,
+        "reviews": 0,
+        "owned_by_profile": true
+      },
+      {
         "full_name": "rdlugs/sentryward",
         "url": "https://github.com/rdlugs/sentryward",
         "description": "Self-hosted AI code reviewer with automated reviews, inline suggestions, and flexible support for cloud and local models.",
@@ -17502,12 +17809,12 @@
         "owned_by_profile": true
       },
       {
-        "full_name": "iamvisheshsrivastava/AirKube",
-        "url": "https://github.com/iamvisheshsrivastava/AirKube",
-        "description": "Agentic MLOps prototype with LangGraph tools, Neo4j knowledge graphs, FastAPI inference and Airflow data pipelines.",
+        "full_name": "iamvisheshsrivastava/Smart_CSV_Toolkit",
+        "url": "https://github.com/iamvisheshsrivastava/Smart_CSV_Toolkit",
+        "description": "Streamlit app for LLM-assisted CSV cleaning, metadata inference, and multi-file merging, with guided decision-tree workflows.",
         "owner": "iamvisheshsrivastava",
         "is_fork": false,
-        "stars": 1,
+        "stars": 3,
         "language": "Python",
         "commits": 3,
         "pull_requests": 3,
@@ -17516,12 +17823,12 @@
         "owned_by_profile": false
       },
       {
-        "full_name": "iamvisheshsrivastava/Smart_CSV_Toolkit",
-        "url": "https://github.com/iamvisheshsrivastava/Smart_CSV_Toolkit",
-        "description": "Streamlit app for LLM-assisted CSV cleaning, metadata inference, and multi-file merging, with guided decision-tree workflows.",
+        "full_name": "iamvisheshsrivastava/AirKube",
+        "url": "https://github.com/iamvisheshsrivastava/AirKube",
+        "description": "Agentic MLOps prototype with LangGraph tools, Neo4j knowledge graphs, FastAPI inference and Airflow data pipelines.",
         "owner": "iamvisheshsrivastava",
         "is_fork": false,
-        "stars": 3,
+        "stars": 1,
         "language": "Python",
         "commits": 3,
         "pull_requests": 3,
@@ -17591,7 +17898,7 @@
         "description": "Open-source persistent memory for AI agent pipelines (LangGraph, CrewAI, AutoGen) and Claude. REST API + knowledge graph + autonomous consolidation.",
         "owner": "doobidoo",
         "is_fork": false,
-        "stars": 2153,
+        "stars": 2154,
         "language": "Python",
         "commits": 2,
         "pull_requests": 3,
@@ -17614,20 +17921,6 @@
         "owned_by_profile": false
       },
       {
-        "full_name": "mikesilvers/rag-docker",
-        "url": "https://github.com/mikesilvers/rag-docker",
-        "description": "RAG creation as a docker instance.",
-        "owner": "mikesilvers",
-        "is_fork": false,
-        "stars": 1,
-        "language": "Python",
-        "commits": 3,
-        "pull_requests": 1,
-        "issues": 0,
-        "reviews": 0,
-        "owned_by_profile": false
-      },
-      {
         "full_name": "markline-dev/markline",
         "url": "https://github.com/markline-dev/markline",
         "description": "Open-source, self-hostable documentation framework with first-class OpenAPI, full-text search, and an interactive API playground. A fully open alternative to Scalar and Mintlify.",
@@ -17635,6 +17928,20 @@
         "is_fork": false,
         "stars": 5,
         "language": "TypeScript",
+        "commits": 3,
+        "pull_requests": 1,
+        "issues": 0,
+        "reviews": 0,
+        "owned_by_profile": false
+      },
+      {
+        "full_name": "mikesilvers/rag-docker",
+        "url": "https://github.com/mikesilvers/rag-docker",
+        "description": "RAG creation as a docker instance.",
+        "owner": "mikesilvers",
+        "is_fork": false,
+        "stars": 1,
+        "language": "Python",
         "commits": 3,
         "pull_requests": 1,
         "issues": 0,
@@ -17661,7 +17968,7 @@
         "description": "Python & Command-line tool to gather text and metadata on the Web: Crawling, scraping, extraction, output as CSV, JSON, HTML, MD, TXT, XML",
         "owner": "adbar",
         "is_fork": false,
-        "stars": 7170,
+        "stars": 7172,
         "language": "Python",
         "commits": 1,
         "pull_requests": 2,
@@ -17675,8 +17982,22 @@
         "description": "Molecular similarity search over PubChem with RDKit: CLI, MCP server for Claude, local fingerprint index",
         "owner": "MysterionRise",
         "is_fork": false,
-        "stars": 11,
+        "stars": 12,
         "language": "Python",
+        "commits": 1,
+        "pull_requests": 2,
+        "issues": 0,
+        "reviews": 0,
+        "owned_by_profile": false
+      },
+      {
+        "full_name": "OpnForm/OpnForm",
+        "url": "https://github.com/OpnForm/OpnForm",
+        "description": "Beautiful Open-Source Form Builder",
+        "owner": "OpnForm",
+        "is_fork": false,
+        "stars": 4031,
+        "language": "PHP",
         "commits": 1,
         "pull_requests": 2,
         "issues": 0,
@@ -17698,41 +18019,13 @@
         "owned_by_profile": false
       },
       {
-        "full_name": "OpnForm/OpnForm",
-        "url": "https://github.com/OpnForm/OpnForm",
-        "description": "Beautiful Open-Source Form Builder",
-        "owner": "OpnForm",
-        "is_fork": false,
-        "stars": 4028,
-        "language": "PHP",
-        "commits": 1,
-        "pull_requests": 2,
-        "issues": 0,
-        "reviews": 0,
-        "owned_by_profile": false
-      },
-      {
-        "full_name": "hamids-ai-automations/ai-marketing-portfolio-meta",
-        "url": "https://github.com/hamids-ai-automations/ai-marketing-portfolio-meta",
-        "description": "Portfolio hub: standards, roadmap, case studies, architecture map for the AI Marketing Engineer portfolio",
-        "owner": "hamids-ai-automations",
-        "is_fork": false,
-        "stars": 1,
-        "language": "Astro",
-        "commits": 2,
-        "pull_requests": 0,
-        "issues": 0,
-        "reviews": 0,
-        "owned_by_profile": true
-      },
-      {
-        "full_name": "hamids-ai-automations/conversionbridge",
-        "url": "https://github.com/hamids-ai-automations/conversionbridge",
-        "description": "Server-side conversion gateway for Meta Conversions API and Google Analytics 4 with privacy controls. Python, Firebase.",
+        "full_name": "hamids-ai-automations/ghl-servicepro-theme",
+        "url": "https://github.com/hamids-ai-automations/ghl-servicepro-theme",
+        "description": null,
         "owner": "hamids-ai-automations",
         "is_fork": false,
         "stars": 0,
-        "language": "Python",
+        "language": "TypeScript",
         "commits": 2,
         "pull_requests": 0,
         "issues": 0,
@@ -17745,7 +18038,7 @@
         "description": "Enterprise operations console and reference control plane for the ServiceNow Ultimate MCP server - ITSM, CMDB, workflows, analytics and an LLM-powered natural-language query console.",
         "owner": "hamids-ai-automations",
         "is_fork": false,
-        "stars": 0,
+        "stars": 1,
         "language": "TypeScript",
         "commits": 2,
         "pull_requests": 0,
@@ -17810,32 +18103,32 @@
         "owned_by_profile": true
       },
       {
-        "full_name": "exmergo/dex",
-        "url": "https://github.com/exmergo/dex",
-        "description": "Dex lets your agent build your analytics.",
-        "owner": "exmergo",
-        "is_fork": false,
-        "stars": 144,
-        "language": "Python",
-        "commits": 1,
-        "pull_requests": 1,
-        "issues": 0,
-        "reviews": 0,
-        "owned_by_profile": false
-      },
-      {
-        "full_name": "OpenWave-India/modeldiff",
-        "url": "https://github.com/OpenWave-India/modeldiff",
-        "description": "Regression testing for local AI",
-        "owner": "OpenWave-India",
+        "full_name": "hamids-ai-automations/ai-marketing-portfolio-meta",
+        "url": "https://github.com/hamids-ai-automations/ai-marketing-portfolio-meta",
+        "description": "Portfolio hub: standards, roadmap, case studies, architecture map for the AI Marketing Engineer portfolio",
+        "owner": "hamids-ai-automations",
         "is_fork": false,
         "stars": 1,
-        "language": "Python",
-        "commits": 1,
-        "pull_requests": 1,
+        "language": "Astro",
+        "commits": 2,
+        "pull_requests": 0,
         "issues": 0,
         "reviews": 0,
-        "owned_by_profile": false
+        "owned_by_profile": true
+      },
+      {
+        "full_name": "hamids-ai-automations/conversionbridge",
+        "url": "https://github.com/hamids-ai-automations/conversionbridge",
+        "description": "Server-side conversion gateway for Meta Conversions API and Google Analytics 4 with privacy controls. Python, Firebase.",
+        "owner": "hamids-ai-automations",
+        "is_fork": false,
+        "stars": 0,
+        "language": "Python",
+        "commits": 2,
+        "pull_requests": 0,
+        "issues": 0,
+        "reviews": 0,
+        "owned_by_profile": true
       },
       {
         "full_name": "laaielichter/Gulliver",
@@ -17844,34 +18137,6 @@
         "owner": "laaielichter",
         "is_fork": false,
         "stars": 2,
-        "language": "Python",
-        "commits": 1,
-        "pull_requests": 1,
-        "issues": 0,
-        "reviews": 0,
-        "owned_by_profile": false
-      },
-      {
-        "full_name": "cfgaudit/cfgaudit",
-        "url": "https://github.com/cfgaudit/cfgaudit",
-        "description": "Static security auditor for AI-agent configuration: Claude Code, MCP servers, Cursor, Codex, Copilot, Gemini CLI and more. SARIF output, OWASP LLM Top 10 mapping.",
-        "owner": "cfgaudit",
-        "is_fork": false,
-        "stars": 30,
-        "language": "Go",
-        "commits": 1,
-        "pull_requests": 1,
-        "issues": 0,
-        "reviews": 0,
-        "owned_by_profile": false
-      },
-      {
-        "full_name": "pygrpc/pygrpc-native",
-        "url": "https://github.com/pygrpc/pygrpc-native",
-        "description": "Drop-in grpcio server with HTTP/2 and gRPC in Rust, outside the GIL. Your servicers stay in Python.",
-        "owner": "pygrpc",
-        "is_fork": false,
-        "stars": 9,
         "language": "Python",
         "commits": 1,
         "pull_requests": 1,
@@ -17901,6 +18166,62 @@
         "is_fork": false,
         "stars": 0,
         "language": "JavaScript",
+        "commits": 1,
+        "pull_requests": 1,
+        "issues": 0,
+        "reviews": 0,
+        "owned_by_profile": false
+      },
+      {
+        "full_name": "pygrpc/pygrpc-native",
+        "url": "https://github.com/pygrpc/pygrpc-native",
+        "description": "Drop-in grpcio server with HTTP/2 and gRPC in Rust, outside the GIL. Your servicers stay in Python.",
+        "owner": "pygrpc",
+        "is_fork": false,
+        "stars": 9,
+        "language": "Python",
+        "commits": 1,
+        "pull_requests": 1,
+        "issues": 0,
+        "reviews": 0,
+        "owned_by_profile": false
+      },
+      {
+        "full_name": "exmergo/dex",
+        "url": "https://github.com/exmergo/dex",
+        "description": "Dex lets your agent build your analytics.",
+        "owner": "exmergo",
+        "is_fork": false,
+        "stars": 144,
+        "language": "Python",
+        "commits": 1,
+        "pull_requests": 1,
+        "issues": 0,
+        "reviews": 0,
+        "owned_by_profile": false
+      },
+      {
+        "full_name": "OpenWave-India/modeldiff",
+        "url": "https://github.com/OpenWave-India/modeldiff",
+        "description": "Regression testing for local AI",
+        "owner": "OpenWave-India",
+        "is_fork": false,
+        "stars": 1,
+        "language": "Python",
+        "commits": 1,
+        "pull_requests": 1,
+        "issues": 0,
+        "reviews": 0,
+        "owned_by_profile": false
+      },
+      {
+        "full_name": "cfgaudit/cfgaudit",
+        "url": "https://github.com/cfgaudit/cfgaudit",
+        "description": "Static security auditor for AI-agent configuration: Claude Code, MCP servers, Cursor, Codex, Copilot, Gemini CLI and more. SARIF output, OWASP LLM Top 10 mapping.",
+        "owner": "cfgaudit",
+        "is_fork": false,
+        "stars": 30,
+        "language": "Go",
         "commits": 1,
         "pull_requests": 1,
         "issues": 0,
@@ -17978,27 +18299,13 @@
         "owned_by_profile": false
       },
       {
-        "full_name": "hamids-ai-automations/ai-agent-testing-lab",
-        "url": "https://github.com/hamids-ai-automations/ai-agent-testing-lab",
-        "description": "AI agent evaluation and reliability harness: labelled suites, CI integration, accuracy/calibration/cost/latency reporting. Python, pytest, MCP.",
+        "full_name": "hamids-ai-automations/gemini-agent-reliability-kit",
+        "url": "https://github.com/hamids-ai-automations/gemini-agent-reliability-kit",
+        "description": "Offline-first reliability harness for Gemini tool-calling agents: schema, tool choice, argument contracts, retry telemetry, latency and cost report cards.",
         "owner": "hamids-ai-automations",
         "is_fork": false,
         "stars": 0,
         "language": "Python",
-        "commits": 1,
-        "pull_requests": 0,
-        "issues": 0,
-        "reviews": 0,
-        "owned_by_profile": true
-      },
-      {
-        "full_name": "hamids-ai-automations/dynamic-schema-generator",
-        "url": "https://github.com/hamids-ai-automations/dynamic-schema-generator",
-        "description": "Dynamic Schema Generator for WordPress: Automated, accurate JSON-LD Schema.org structured data engine with Elementor integration.",
-        "owner": "hamids-ai-automations",
-        "is_fork": false,
-        "stars": 0,
-        "language": "PHP",
         "commits": 1,
         "pull_requests": 0,
         "issues": 0,
@@ -18020,9 +18327,23 @@
         "owned_by_profile": true
       },
       {
-        "full_name": "hamids-ai-automations/gemini-agent-reliability-kit",
-        "url": "https://github.com/hamids-ai-automations/gemini-agent-reliability-kit",
-        "description": "Offline-first reliability harness for Gemini tool-calling agents: schema, tool choice, argument contracts, retry telemetry, latency and cost report cards.",
+        "full_name": "hamids-ai-automations/dynamic-schema-generator",
+        "url": "https://github.com/hamids-ai-automations/dynamic-schema-generator",
+        "description": "Dynamic Schema Generator for WordPress: Automated, accurate JSON-LD Schema.org structured data engine with Elementor integration.",
+        "owner": "hamids-ai-automations",
+        "is_fork": false,
+        "stars": 0,
+        "language": "PHP",
+        "commits": 1,
+        "pull_requests": 0,
+        "issues": 0,
+        "reviews": 0,
+        "owned_by_profile": true
+      },
+      {
+        "full_name": "hamids-ai-automations/ai-agent-testing-lab",
+        "url": "https://github.com/hamids-ai-automations/ai-agent-testing-lab",
+        "description": "AI agent evaluation and reliability harness: labelled suites, CI integration, accuracy/calibration/cost/latency reporting. Python, pytest, MCP.",
         "owner": "hamids-ai-automations",
         "is_fork": false,
         "stars": 0,
@@ -18343,8 +18664,8 @@
       }
     ],
     "window": {
-      "from": "2025-11-24T23:53:55Z",
-      "to": "2026-11-24T23:53:55Z"
+      "from": "2025-11-25T11:35:38Z",
+      "to": "2026-11-25T11:35:38Z"
     }
   },
   "external_links": [
@@ -18359,6 +18680,7 @@
         "repository_homepage"
       ],
       "related_resources": [
+        "hamids-ai-automations/ghl-servicepro-theme",
         "hamids-ai-automations/github-profile-master-record",
         "hamids-ai-automations/servicenow-ultimate-mcp",
         "hamids-ai-automations/shopify-growth-mcp",
@@ -18504,6 +18826,8 @@
         "repository_readme_link"
       ],
       "related_resources": [
+        "hamids-ai-automations/ghl-servicepro-theme",
+        "hamids-ai-automations/marvis-portfolio",
         "hamids-ai-automations/servicenow-ultimate-mcp",
         "hamids-ai-automations/hamids-ai-automations",
         "hamids-ai-automations/ghl-devops-toolkit",
@@ -18531,6 +18855,18 @@
       "verified": null
     },
     {
+      "url": "http://localhost:3000`",
+      "type": "website",
+      "relationships": [
+        "repository_readme_link"
+      ],
+      "related_resources": [
+        "hamids-ai-automations/ghl-servicepro-theme"
+      ],
+      "source": "README of hamids-ai-automations/ghl-servicepro-theme",
+      "verified": null
+    },
+    {
       "url": "https://hamid-resume.web.app",
       "type": "live_site",
       "relationships": [
@@ -18545,6 +18881,19 @@
         "hamids-ai-automations/seo-audit-tool",
         "hamids-ai-automations/ppc-performance-dashboard",
         "hamids-ai-automations/ecommerce-seo-optimizer"
+      ],
+      "source": "README of hamids-ai-automations/github-profile-master-record",
+      "verified": null
+    },
+    {
+      "url": "https://marvis.web.app**",
+      "type": "live_site",
+      "relationships": [
+        "repository_readme_link"
+      ],
+      "related_resources": [
+        "hamids-ai-automations/github-profile-master-record",
+        "hamids-ai-automations/marvis-portfolio"
       ],
       "source": "README of hamids-ai-automations/github-profile-master-record",
       "verified": null
@@ -18702,20 +19051,6 @@
       "verified": null
     },
     {
-      "url": "https://pypi.org/project/pubchem-finder",
-      "type": "website",
-      "relationships": [
-        "repository_readme_link",
-        "repository_homepage"
-      ],
-      "related_resources": [
-        "hamids-ai-automations/github-profile-master-record",
-        "hamids-ai-automations/pubchem-finder"
-      ],
-      "source": "README of hamids-ai-automations/github-profile-master-record",
-      "verified": null
-    },
-    {
       "url": "https://api.github.com/users/hamids-ai-automations/packages?package_type=pypi",
       "type": "github",
       "relationships": [
@@ -18737,6 +19072,18 @@
         "hamids-ai-automations/github-profile-master-record"
       ],
       "source": "README of hamids-ai-automations/github-profile-master-record",
+      "verified": null
+    },
+    {
+      "url": "http://localhost:5000",
+      "type": "website",
+      "relationships": [
+        "repository_readme_link"
+      ],
+      "related_resources": [
+        "hamids-ai-automations/marvis-portfolio"
+      ],
+      "source": "README of hamids-ai-automations/marvis-portfolio",
       "verified": null
     },
     {
@@ -19901,6 +20248,19 @@
         "hamids-ai-automations/cymbal-air-toolbox-demo"
       ],
       "source": "README of hamids-ai-automations/cymbal-air-toolbox-demo",
+      "verified": null
+    },
+    {
+      "url": "https://pypi.org/project/pubchem-finder",
+      "type": "live_site",
+      "relationships": [
+        "repository_homepage",
+        "repository_readme_link"
+      ],
+      "related_resources": [
+        "hamids-ai-automations/pubchem-finder"
+      ],
+      "source": "repository hamids-ai-automations/pubchem-finder",
       "verified": null
     },
     {
@@ -28069,22 +28429,22 @@
       "name": "Python",
       "category": "language",
       "total_bytes": 305350106,
-      "percentage": 69.78,
+      "percentage": 69.74,
       "repository_count": 80
     },
     {
       "name": "TypeScript",
       "category": "language",
-      "total_bytes": 74687689,
-      "percentage": 17.07,
-      "repository_count": 27
+      "total_bytes": 74689479,
+      "percentage": 17.06,
+      "repository_count": 28
     },
     {
       "name": "JavaScript",
       "category": "language",
-      "total_bytes": 14767017,
-      "percentage": 3.37,
-      "repository_count": 42
+      "total_bytes": 14981772,
+      "percentage": 3.42,
+      "repository_count": 44
     },
     {
       "name": "HTML",
@@ -28097,14 +28457,14 @@
       "name": "Go",
       "category": "language",
       "total_bytes": 8598365,
-      "percentage": 1.97,
+      "percentage": 1.96,
       "repository_count": 7
     },
     {
       "name": "PHP",
       "category": "language",
       "total_bytes": 5011706,
-      "percentage": 1.15,
+      "percentage": 1.14,
       "repository_count": 4
     },
     {
@@ -28124,9 +28484,9 @@
     {
       "name": "CSS",
       "category": "language",
-      "total_bytes": 2114419,
-      "percentage": 0.48,
-      "repository_count": 27
+      "total_bytes": 2146801,
+      "percentage": 0.49,
+      "repository_count": 28
     },
     {
       "name": "MDX",
@@ -28279,112 +28639,112 @@
       "name": "Batchfile",
       "category": "language",
       "total_bytes": 15149,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 6
     },
     {
       "name": "Nix",
       "category": "language",
       "total_bytes": 15083,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 3
     },
     {
       "name": "Slim",
       "category": "language",
       "total_bytes": 12767,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 2
     },
     {
       "name": "HCL",
       "category": "language",
       "total_bytes": 8866,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 2
     },
     {
       "name": "Astro",
       "category": "language",
       "total_bytes": 8841,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 1
     },
     {
       "name": "C++",
       "category": "language",
       "total_bytes": 6259,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 1
     },
     {
       "name": "Gherkin",
       "category": "language",
       "total_bytes": 4958,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 1
     },
     {
       "name": "Ruby",
       "category": "language",
       "total_bytes": 4294,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 3
     },
     {
       "name": "Inno Setup",
       "category": "language",
       "total_bytes": 4096,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 1
     },
     {
       "name": "CMake",
       "category": "language",
       "total_bytes": 3553,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 1
     },
     {
       "name": "Mermaid",
       "category": "language",
       "total_bytes": 3514,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 1
     },
     {
       "name": "Mako",
       "category": "language",
       "total_bytes": 3397,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 4
     },
     {
       "name": "WGSL",
       "category": "language",
       "total_bytes": 1078,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 1
     },
     {
       "name": "Tape",
       "category": "language",
       "total_bytes": 663,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 1
     },
     {
       "name": "Procfile",
       "category": "language",
       "total_bytes": 112,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 1
     },
     {
       "name": "Rich Text Format",
       "category": "language",
       "total_bytes": 110,
-      "percentage": 0.0,
+      "percentage": 0,
       "repository_count": 1
     },
     {
@@ -28479,7 +28839,7 @@
       "category": "framework",
       "total_bytes": null,
       "percentage": null,
-      "repository_count": 20,
+      "repository_count": 21,
       "repositories": [
         "Go-High-Level-MCP-2026-Complete",
         "Gulliver",
@@ -28492,6 +28852,7 @@
         "cuga-agent",
         "ghl-automation-engine",
         "google-services-mcp",
+        "marvis-portfolio",
         "mcp-memory-service",
         "open-resource-broker",
         "openmed",
@@ -28499,8 +28860,7 @@
         "pubchem-finder",
         "pyrite",
         "rag-docker",
-        "servicenow-ultimate-mcp",
-        "shopify-growth-mcp"
+        "servicenow-ultimate-mcp"
       ]
     },
     {
@@ -28555,11 +28915,12 @@
       "category": "framework",
       "total_bytes": null,
       "percentage": null,
-      "repository_count": 10,
+      "repository_count": 11,
       "repositories": [
         "Tel-Agent",
         "flimanalyzer",
         "ghl-devops-toolkit",
+        "ghl-servicepro-theme",
         "markline",
         "mcp-memory-service",
         "meho",
@@ -28574,11 +28935,12 @@
       "category": "framework",
       "total_bytes": null,
       "percentage": null,
-      "repository_count": 9,
+      "repository_count": 10,
       "repositories": [
         "agent-swarm",
         "firebase-ai-starter-kit",
         "ghl-devops-toolkit",
+        "ghl-servicepro-theme",
         "markline",
         "nexgen-financial-experts",
         "open-resource-broker",
@@ -28704,11 +29066,25 @@
       "category": "framework",
       "total_bytes": null,
       "percentage": null,
-      "repository_count": 3,
+      "repository_count": 4,
       "repositories": [
         "ghl-devops-toolkit",
+        "ghl-servicepro-theme",
         "nexgen-financial-experts",
         "servicenow-ultimate-mcp"
+      ]
+    },
+    {
+      "name": "Firebase",
+      "category": "framework",
+      "total_bytes": null,
+      "percentage": null,
+      "repository_count": 4,
+      "repositories": [
+        "conversionbridge",
+        "firebase-ai-starter-kit",
+        "hamid-resume",
+        "marvis-portfolio"
       ]
     },
     {
@@ -28721,18 +29097,6 @@
         "frappe",
         "google-services-mcp",
         "searchpulse-ai"
-      ]
-    },
-    {
-      "name": "Firebase",
-      "category": "framework",
-      "total_bytes": null,
-      "percentage": null,
-      "repository_count": 3,
-      "repositories": [
-        "conversionbridge",
-        "firebase-ai-starter-kit",
-        "hamid-resume"
       ]
     },
     {
@@ -29045,20 +29409,111 @@
         }
       },
       "detected_at": "2026-11-24T23:54:04+00:00"
+    },
+    {
+      "type": "repository_added",
+      "resource": "hamids-ai-automations/marvis-portfolio",
+      "url": "https://github.com/hamids-ai-automations/marvis-portfolio",
+      "summary": "New repository discovered: hamids-ai-automations/marvis-portfolio",
+      "fields": {},
+      "detected_at": "2026-11-25T08:31:56+00:00"
+    },
+    {
+      "type": "repository_updated",
+      "resource": "hamids-ai-automations/github-profile-master-record",
+      "url": "https://github.com/hamids-ai-automations/github-profile-master-record",
+      "summary": "hamids-ai-automations/github-profile-master-record updated: pushed_at, readme",
+      "fields": {
+        "pushed_at": {
+          "old": "2026-11-24T14:53:16Z",
+          "new": "2026-11-24T23:54:06Z"
+        },
+        "readme": {
+          "old": 9681,
+          "new": 9661
+        }
+      },
+      "detected_at": "2026-11-25T08:31:56+00:00"
+    },
+    {
+      "type": "external_links_added",
+      "resource": "external_links",
+      "summary": "2 new external link(s) discovered.",
+      "fields": {
+        "added": [
+          "http://localhost:5000",
+          "https://marvis.web.app**"
+        ]
+      },
+      "detected_at": "2026-11-25T08:31:56+00:00"
+    },
+    {
+      "type": "repository_added",
+      "resource": "hamids-ai-automations/ghl-servicepro-theme",
+      "url": "https://github.com/hamids-ai-automations/ghl-servicepro-theme",
+      "summary": "New repository discovered: hamids-ai-automations/ghl-servicepro-theme",
+      "fields": {},
+      "detected_at": "2026-11-25T11:35:49+00:00"
+    },
+    {
+      "type": "repository_updated",
+      "resource": "hamids-ai-automations/github-profile-master-record",
+      "url": "https://github.com/hamids-ai-automations/github-profile-master-record",
+      "summary": "hamids-ai-automations/github-profile-master-record updated: pushed_at, readme",
+      "fields": {
+        "pushed_at": {
+          "old": "2026-11-24T23:54:06Z",
+          "new": "2026-11-25T08:31:58Z"
+        },
+        "readme": {
+          "old": 9661,
+          "new": 9801
+        }
+      },
+      "detected_at": "2026-11-25T11:35:49+00:00"
+    },
+    {
+      "type": "repository_updated",
+      "resource": "hamids-ai-automations/servicenow-ultimate-mcp",
+      "url": "https://github.com/hamids-ai-automations/servicenow-ultimate-mcp",
+      "summary": "hamids-ai-automations/servicenow-ultimate-mcp updated: stars, updated_at",
+      "fields": {
+        "stars": {
+          "old": 0,
+          "new": 1
+        },
+        "updated_at": {
+          "old": "2026-11-24T00:50:06Z",
+          "new": "2026-11-25T10:07:19Z"
+        }
+      },
+      "detected_at": "2026-11-25T11:35:49+00:00"
+    },
+    {
+      "type": "external_links_added",
+      "resource": "external_links",
+      "summary": "1 new external link(s) discovered.",
+      "fields": {
+        "added": [
+          "http://localhost:3000`"
+        ]
+      },
+      "detected_at": "2026-11-25T11:35:49+00:00"
     }
   ],
   "data_quality": {
-    "total_repositories_discovered": 96,
-    "total_repositories_documented": 95,
-    "documentation_coverage_percent": 98.96,
-    "repositories_without_description": 6,
-    "total_projects": 96,
+    "total_repositories_discovered": 98,
+    "total_repositories_documented": 97,
+    "documentation_coverage_percent": 98.98,
+    "repositories_without_description": 7,
+    "total_projects": 98,
     "total_contributions": 169,
-    "total_external_links": 790,
+    "total_external_links": 793,
     "total_gists": 0,
     "total_releases": 7,
     "total_packages": 0,
     "missing_optional_fields": [
+      "hamids-ai-automations/ghl-servicepro-theme: description",
       "hamids-ai-automations/langchain-google-cloud-sql-pg-python: description",
       "hamids-ai-automations/sbsim: description",
       "hamids-ai-automations/rai-toolkit: description",
@@ -29071,7 +29526,6 @@
     ],
     "validation_errors": 0,
     "validation_warnings": 1,
-    "last_validated": "2026-11-24T23:54:04+00:00"
+    "last_validated": "2026-11-25T11:35:49+00:00"
   }
 }
-
