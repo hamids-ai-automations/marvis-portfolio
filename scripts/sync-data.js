@@ -60,6 +60,29 @@ async function readJson(file) {
   }
 }
 
+/**
+ * Fetch the master record with bounded exponential backoff.
+ * Transient failures (DNS, 5xx, timeouts) must not take the daily job down.
+ * @param {string} url
+ * @param {number} [attempts]
+ * @returns {Promise<object>}
+ */
+async function loadWithRetry(url, attempts = 3) {
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      return await loadMasterRecordUrl(url);
+    } catch (error) {
+      lastError = error;
+      if (attempt === attempts) break;
+      const delay = 2000 * 2 ** (attempt - 1);
+      console.error(`Fetch attempt ${attempt} failed (${error.message}); retrying in ${delay}ms`);
+      await new Promise((resolve) => setTimeout(resolve, delay));
+    }
+  }
+  throw lastError;
+}
+
 async function main() {
   const previousState = (await readJson(STATE)) ?? {};
   const previousSnapshot = existsSync(SNAPSHOT)
@@ -69,7 +92,23 @@ async function main() {
 
   const record = localFile
     ? await loadMasterRecordFile(path.resolve(localFile))
-    : await loadMasterRecordUrl(SITE.github.masterRecordRaw);
+    : await loadWithRetry(SITE.github.masterRecordRaw).catch(async (error) => {
+        if (!previousSnapshot) throw error;
+        // Recovery path: keep serving the last verified snapshot rather than failing the job.
+        const state = {
+          ...previousState,
+          last_checked_at: new Date().toISOString(),
+          last_error: error.message,
+        };
+        await writeFile(STATE, `${JSON.stringify(state, null, 2)}\n`, 'utf8');
+        log(`Fetch failed after retries (${error.message}); keeping last verified snapshot.`, {
+          changed: false,
+          stale: true,
+        });
+        return null;
+      });
+
+  if (!record) return;
 
   const { errors, warnings } = validateMasterRecord(record);
   if (errors.length) {

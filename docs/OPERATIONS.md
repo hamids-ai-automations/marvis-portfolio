@@ -82,6 +82,7 @@ gh api repos/hamids-ai-automations/marvis-portfolio/dispatches \
 | `validate` reports a placeholder | Copy still contains `example.com`, `lorem`, `TODO` outside code samples | Fix the source copy in `src/content/` and rebuild |
 | `validate` reports an internal link | A nav or card target has no page | Fix the path or add the redirect |
 | Build fails on hash mismatch | `data/master-record.json` is malformed or truncated | Re-run `npm run sync`; commit only a verified snapshot |
+| Sync logs `Fetch failed after retries` | Upstream master record unreachable (3 attempts, exponential backoff) | Nothing to do for a transient outage: the last verified snapshot stays in place and the job exits green. If it repeats, check the master-record repo is public and `SITE.github.masterRecordRaw` still resolves. |
 | Deploy fails with 403 | CLI session expired or wrong project | `firebase login --reauth`, confirm `.firebaserc` |
 | Deploy fails in Actions | Missing or expired `FIREBASE_SERVICE_ACCOUNT` | Rotate the key, update the secret |
 | Site serves stale HTML | `cleanUrls`/cache expectations | HTML is `must-revalidate`; hard refresh, then check headers |
