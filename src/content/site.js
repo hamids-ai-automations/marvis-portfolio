@@ -62,7 +62,7 @@ export const HOME = {
     contact: {
       eyebrow: 'Contact',
       heading: 'One channel, and it is WhatsApp',
-      body: 'No contact form, no discovery call funnel. Send a message describing the system and the problem, and you will get a direct answer about whether I can help.',
+      body: 'WhatsApp is the fastest route. The project brief on the contact page takes two minutes and opens WhatsApp with your answers already written out.',
       note: 'Typically replies within one working day, Pakistan time (UTC+5).',
     },
   },

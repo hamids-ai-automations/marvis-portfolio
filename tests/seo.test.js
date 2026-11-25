@@ -20,6 +20,8 @@ import {
   truncate,
 } from '../src/lib/seo.js';
 import { renderHome } from '../src/pages/home.js';
+import { renderContact } from '../src/pages/about.js';
+import { renderServiceDetail } from '../src/pages/services.js';
 import { loadModel } from './helpers.js';
 
 const { model } = await loadModel();
@@ -84,4 +86,34 @@ test('the home page keeps WhatsApp as the only contact channel and carries schem
   assert.doesNotMatch(page.html, /<form[ >]/i);
   assert.match(page.html, /"@type":\s*"Person"/);
   assert.match(page.html, /rel="canonical"/);
+});
+
+test('the contact brief stays a client-side WhatsApp handoff', () => {
+  const page = renderContact(model);
+  const form = page.html.match(/<form[\s\S]*?<\/form>/i)?.[0] ?? '';
+  assert.ok(form, 'contact page renders the brief form');
+  assert.match(form, /data-brief-form/);
+  assert.match(form, /data-wa-number="923167417135"/);
+  assert.match(form, /data-brief-status/);
+  assert.doesNotMatch(form, /\baction=/i, 'the form must not post anywhere');
+  assert.doesNotMatch(form, /\bmethod=/i, 'the form must not declare a transport');
+  assert.doesNotMatch(page.html, /<input[^>]+type="hidden"/i, 'no silent data collection');
+  assert.match(page.html, /wa\.me\/923167417135/);
+});
+
+test('the home page declares what is proven and what is not', () => {
+  const page = renderHome(model);
+  assert.match(page.html, /evidence--proven/);
+  assert.match(page.html, /evidence--open/);
+  assert.match(page.html, /diagram__node/);
+  assert.match(page.html, /No client logos/);
+  assert.doesNotMatch(page.html, /ISO 27001 certified/i);
+});
+
+test('service detail pages carry an internal WhatsApp CTA mid-page', () => {
+  const service = model.services[0];
+  const page = renderServiceDetail(service, model);
+  assert.match(page.html, /cta-inline/);
+  assert.match(page.html, /wa\.me\/923167417135\?text=/);
+  assert.equal((page.html.match(/<h1[ >]/g) ?? []).length, 1);
 });

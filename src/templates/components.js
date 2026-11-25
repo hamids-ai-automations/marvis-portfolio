@@ -228,3 +228,167 @@ export function metaList(rows) {
     )
     .join('')}</dl>`;
 }
+
+/**
+ * Architecture figure used on the home page and every service page.
+ * Drawn inline: no image request, no layout shift, inherits theme colours.
+ * @param {{caption?: string, compact?: boolean}} [options]
+ */
+export function automationDiagram({ caption, compact = false } = {}) {
+  const stages = [
+    { title: 'Signals', body: 'Forms, inbox, CRM events, Sheets, webhooks' },
+    { title: 'Normalise', body: 'Typed schema, dedupe, enrichment' },
+    { title: 'Reason', body: 'LLM step with retrieved context' },
+    { title: 'Guardrails', body: 'Schema validation, retries, human approval' },
+    { title: 'Systems of record', body: 'CRM, ATS, Sheets, ticketing, notifications' },
+  ];
+
+  const width = 720;
+  const boxW = 128;
+  const gap = 16;
+  const boxH = 86;
+  const y = 28;
+
+  const boxes = stages
+    .map((stage, i) => {
+      const x = 4 + i * (boxW + gap);
+      return `<g class="diagram__node">
+        <rect x="${x}" y="${y}" width="${boxW}" height="${boxH}" rx="10"></rect>
+        <text x="${x + boxW / 2}" y="${y + 26}" class="diagram__title">${escapeHtml(stage.title)}</text>
+        ${wrapSvgText(stage.body, x + boxW / 2, y + 47, 17)}
+      </g>${
+        i < stages.length - 1
+          ? `<path class="diagram__arrow" d="M${x + boxW + 1} ${y + boxH / 2} h14" marker-end="url(#arrowhead)"></path>`
+          : ''
+      }`;
+    })
+    .join('\n        ');
+
+  return `<figure class="diagram${compact ? ' diagram--compact' : ''}">
+      <svg viewBox="0 0 ${width} 148" role="img" aria-labelledby="diagram-title diagram-desc" preserveAspectRatio="xMidYMid meet">
+        <title id="diagram-title">Automation reference architecture</title>
+        <desc id="diagram-desc">Signals are captured from forms, inbox and CRM events, normalised into a typed schema, reasoned over by a language model, checked against guardrails and write-backs, then written into systems of record.</desc>
+        <defs>
+          <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+            <path d="M0 0 L6 3 L0 6 z" fill="currentColor"></path>
+          </marker>
+        </defs>
+        ${boxes}
+        <path class="diagram__loop" d="M${4 + 4 * (boxW + gap) + boxW / 2} ${y + boxH + 6} v18 q0 8 -8 8 h-${4 * (boxW + gap) + boxW - boxW / 2} q-8 0 -8 -8 v-14" marker-end="url(#arrowhead)"></path>
+        <text x="${width / 2}" y="140" class="diagram__loop-label">feedback loop: evaluations and failed runs feed the next iteration</text>
+      </svg>
+      ${
+        caption
+          ? `<figcaption class="diagram__caption">${escapeHtml(caption)}</figcaption>`
+          : ''
+      }
+    </figure>`;
+}
+
+/**
+ * @param {string} text
+ * @param {number} x
+ * @param {number} y
+ * @param {number} maxChars
+ * @returns {string}
+ */
+function wrapSvgText(text, x, y, maxChars) {
+  const words = text.split(' ');
+  const lines = [];
+  let line = '';
+  for (const word of words) {
+    if ((line + ' ' + word).trim().length > maxChars) {
+      lines.push(line.trim());
+      line = word;
+    } else {
+      line = `${line} ${word}`;
+    }
+  }
+  if (line.trim()) lines.push(line.trim());
+  return lines
+    .slice(0, 3)
+    .map(
+      (content, i) =>
+        `<text x="${x}" y="${y + i * 13}" class="diagram__body">${escapeHtml(content)}</text>`,
+    )
+    .join('');
+}
+
+/**
+ * Qualification form. It deliberately posts nowhere: the visitor reviews the
+ * generated brief in WhatsApp and sends it there, so no third-party form
+ * processor and no stored personal data are required.
+ * @param {{heading?: string, intro?: string}} [options]
+ */
+export function briefForm({ heading, intro } = {}) {
+  return `<form class="brief-form" data-brief-form data-wa-number="${escapeAttr(SITE.whatsapp.e164)}" novalidate>
+      <div class="brief-form__head">
+        <h2 class="brief-form__title">${escapeHtml(heading ?? 'Send a project brief')}</h2>
+        <p class="brief-form__intro">${escapeHtml(
+          intro ??
+            'Fill this in and the button opens WhatsApp with the brief already written out. Nothing is submitted to a server from this page.',
+        )}</p>
+      </div>
+      <div class="brief-form__grid">
+        <label class="field">
+          <span class="field__label">Name</span>
+          <input class="field__input" type="text" name="name" autocomplete="name" required>
+        </label>
+        <label class="field">
+          <span class="field__label">Company <span class="field__hint">optional</span></span>
+          <input class="field__input" type="text" name="company" autocomplete="organization">
+        </label>
+        <label class="field">
+          <span class="field__label">Email</span>
+          <input class="field__input" type="email" name="email" autocomplete="email" required>
+        </label>
+        <label class="field">
+          <span class="field__label">Timeline</span>
+          <select class="field__input" name="timeline">
+            <option value="This month">This month</option>
+            <option value="Next 4-6 weeks">Next 4-6 weeks</option>
+            <option value="Next quarter">Next quarter</option>
+            <option value="Just exploring">Just exploring</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="field__label">Budget band <span class="field__hint">optional</span></span>
+          <select class="field__input" name="budget">
+            <option value="Not decided">Not decided</option>
+            <option value="Under $1k">Under $1k</option>
+            <option value="$1k - $3k">$1k - $3k</option>
+            <option value="$3k - $8k">$3k - $8k</option>
+            <option value="$8k+">$8k+</option>
+          </select>
+        </label>
+        <label class="field field--wide">
+          <span class="field__label">What should the automation do?</span>
+          <textarea class="field__input" name="brief" rows="4" required placeholder="Example: new leads in a Facebook form should be enriched, scored and routed to the right closer within two minutes."></textarea>
+        </label>
+      </div>
+      <div class="brief-form__actions">
+        <button class="btn btn--primary btn--lg" type="submit">
+          <span aria-hidden="true">💬</span> Open WhatsApp with this brief
+        </button>
+        <p class="brief-form__note">Prefer plain chat? Use the WhatsApp button in the header.</p>
+      </div>
+      <p class="brief-form__status" data-brief-status role="status" hidden></p>
+    </form>`;
+}
+
+/**
+ * Honest capability statement block: what is proven, and how.
+ * @param {{proven: string[], unproven: string[]}} groups
+ */
+export function evidencePanels(groups) {
+  const panel = (title, items, tone) => `<div class="evidence evidence--${tone}">
+        <h3 class="evidence__title">${escapeHtml(title)}</h3>
+        <ul class="evidence__list">${items
+          .map((item) => `<li>${escapeHtml(item)}</li>`)
+          .join('')}</ul>
+      </div>`;
+  return `<div class="evidence-grid">
+        ${panel('Verified today', groups.proven, 'proven')}
+        ${panel('Not claimed', groups.unproven, 'open')}
+      </div>`;
+}

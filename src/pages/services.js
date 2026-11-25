@@ -168,13 +168,23 @@ export function renderServiceDetail(service, model) {
       </section>
 
       <section class="section section--alt">
+        <div class="shell cta-inline">
+          <div>
+            <p class="cta-inline__kicker">Not sure this is the right fit?</p>
+            <p class="cta-inline__text">Describe the manual step that costs the most time. A two-line message is enough to get a straight answer on scope, or on what to fix first.</p>
+          </div>
+          ${button(waLink(service.cta.message), 'Ask on WhatsApp', { external: true })}
+        </div>
+      </section>
+
+      <section class="section">
         <div class="shell">
           ${sectionHeader({ eyebrow: 'Process', heading: 'Five steps, in this order' })}
           ${processSteps(service.process)}
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section--alt">
         <div class="shell split">
           <div>
             ${sectionHeader({ eyebrow: 'Stack', heading: 'Built with' })}
@@ -198,14 +208,14 @@ export function renderServiceDetail(service, model) {
         </div>
       </section>
 
-      <section class="section section--alt">
+      <section class="section">
         <div class="shell faq-section">
           ${sectionHeader({ eyebrow: 'FAQ', heading: 'Questions I get asked' })}
           ${faqList(service.faqs)}
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section--alt">
         <div class="shell">
           <div class="section-head-row">
             ${sectionHeader({ eyebrow: 'Other services', heading: 'Related capability' })}

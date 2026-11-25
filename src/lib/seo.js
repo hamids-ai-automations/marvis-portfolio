@@ -3,11 +3,14 @@
  * Every page must pass through buildSeo() so titles and descriptions stay unique.
  */
 
-import { SITE } from './config.js';
+import { INTEGRATIONS, SITE } from './config.js';
 import { escapeAttr, escapeHtml } from './html.js';
 
 const TITLE_SUFFIX = 'Muhammad Hamid';
+const MAX_TITLE = 60;
 const MAX_DESCRIPTION = 158;
+const OG_IMAGE_SIZE = { width: 1200, height: 630 };
+
 
 /**
  * @typedef {Object} SeoInput
@@ -25,7 +28,7 @@ const MAX_DESCRIPTION = 158;
  */
 export function buildSeo(input) {
   const path = normalizePath(input.path);
-  const title = input.fullTitle ? input.title : `${input.title} | ${TITLE_SUFFIX}`;
+  const title = composeTitle(input.title, Boolean(input.fullTitle));
   return {
     title,
     description: truncate(input.description ?? '', MAX_DESCRIPTION),
@@ -36,6 +39,47 @@ export function buildSeo(input) {
     image: `${SITE.url}${SITE.ogImage}`,
     jsonLd: input.jsonLd ?? [],
   };
+}
+
+/**
+ * Compose a <title> that survives SERP truncation.
+ * The brand suffix is a nice-to-have, not a requirement: drop it before
+ * truncating the part of the title that carries the keyword.
+ * @param {string} raw
+ * @param {boolean} fullTitle
+ * @returns {string}
+ */
+export function composeTitle(raw, fullTitle = false) {
+  const base = String(raw ?? '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (fullTitle) return clampWords(base, MAX_TITLE);
+
+  const withSuffix = `${base} | ${TITLE_SUFFIX}`;
+  if (withSuffix.length <= MAX_TITLE) return withSuffix;
+  if (base.length <= MAX_TITLE) return base;
+
+  const bare = base.replace(/\s*\|\s*.*$/, '');
+  if (bare.length <= MAX_TITLE) return bare;
+
+  return clampWords(bare, MAX_TITLE);
+}
+
+/**
+ * Cut on a word boundary without leaving a dangling separator.
+ * @param {string} text
+ * @param {number} max
+ * @returns {string}
+ */
+function clampWords(text, max) {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max + 1);
+  const space = cut.lastIndexOf(' ');
+  const trimmed = (space > max * 0.6 ? cut.slice(0, space) : text.slice(0, max))
+    .replace(/[\s,;:.\-–—|/]+$/, '')
+    .trim();
+  return trimmed;
 }
 
 /**
@@ -93,19 +137,49 @@ export function renderHead(seo) {
     <meta property="og:description" content="${escapeAttr(seo.description)}">
     <meta property="og:url" content="${escapeAttr(seo.canonical)}">
     <meta property="og:image" content="${escapeAttr(seo.image)}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="${OG_IMAGE_SIZE.width}">
+    <meta property="og:image:height" content="${OG_IMAGE_SIZE.height}">
+    <meta property="og:image:alt" content="${escapeAttr(`${SITE.name} — ${SITE.role}`)}">
     <meta property="og:locale" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${escapeAttr(seo.title)}">
     <meta name="twitter:description" content="${escapeAttr(seo.description)}">
     <meta name="twitter:image" content="${escapeAttr(seo.image)}">
+    <meta name="twitter:image:alt" content="${escapeAttr(`${SITE.name} — ${SITE.role}`)}">
 
     <link rel="alternate" hreflang="en" href="${escapeAttr(seo.noindex ? SITE.url : seo.canonical)}">
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    ${headIntegrations()}
     <link rel="stylesheet" href="/styles.css">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     ${ld}`;
+}
+
+/**
+ * Third-party tags are opt-in per build. Nothing is emitted when the
+ * environment provides no ID, which keeps the shipped HTML free of dead
+ * placeholders and keeps the privacy statement accurate.
+ * @returns {string}
+ */
+function headIntegrations() {
+  const tags = [];
+
+  if (INTEGRATIONS.googleSiteVerification) {
+    tags.push(
+      `<meta name="google-site-verification" content="${escapeAttr(INTEGRATIONS.googleSiteVerification)}">`,
+    );
+  }
+
+  if (INTEGRATIONS.ga4Id) {
+    tags.push(`<script async src="https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(INTEGRATIONS.ga4Id)}"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());gtag('config',${JSON.stringify(INTEGRATIONS.ga4Id)},{anonymize_ip:true,send_page_view:true});</script>`);
+  }
+
+  return tags.join('\n    ');
 }
 
 /* ------------------------------------------------------------------ */

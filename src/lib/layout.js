@@ -45,7 +45,7 @@ export function renderHeader(activePath = '/') {
 
   return `<header class="site-header" data-header>
       <div class="shell site-header__inner">
-        <a class="brand" href="/" aria-label="${escapeAttr(SITE.name)} — home">
+        <a class="brand" href="/" title="${escapeAttr(SITE.name)} — home">
           <span class="brand__mark" aria-hidden="true">MH</span>
           <span class="brand__text">
             <span class="brand__name">${escapeHtml(SITE.name)}</span>
@@ -67,7 +67,11 @@ export function renderHeader(activePath = '/') {
       <div class="mobile-nav" id="mobile-nav" hidden data-mobile-nav>
         ${NAV.map(
           (item) =>
-            `<a class="mobile-nav__link" href="${escapeAttr(item.href)}">${escapeHtml(item.label)}</a>`,
+            `<a class="mobile-nav__link" href="${escapeAttr(item.href)}"${
+              activePath === item.href || (item.href !== '/' && activePath.startsWith(item.href))
+                ? ' aria-current="page"'
+                : ''
+            }>${escapeHtml(item.label)}</a>`,
         ).join('\n        ')}
         <a class="mobile-nav__link mobile-nav__link--cta" href="${escapeAttr(PRIMARY_CTA.href)}" target="_blank" rel="noopener">WhatsApp</a>
       </div>
@@ -136,28 +140,140 @@ export function renderWhatsAppFab() {
 }
 
 /**
- * Tiny progressive-enhancement script: mobile nav toggle + header shadow on scroll.
- * Inlined to keep the page a single request.
+ * Tiny progressive-enhancement script: navigation toggle, header state and
+ * conversion event forwarding. Inlined to keep the page a single request and
+ * deferred to avoid competing with first paint.
  */
 export const BASE_SCRIPT = `<script>
 (function () {
-  var toggle = document.querySelector('[data-nav-toggle]');
-  var panel = document.querySelector('[data-mobile-nav]');
+  var doc = document;
+  var toggle = doc.querySelector('[data-nav-toggle]');
+  var panel = doc.querySelector('[data-mobile-nav]');
+
+  function setNav(open) {
+    if (!toggle || !panel) return;
+    toggle.setAttribute('aria-expanded', String(open));
+    panel.hidden = !open;
+    doc.body.classList.toggle('nav-open', open);
+  }
+
   if (toggle && panel) {
     toggle.addEventListener('click', function () {
-      var open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      panel.hidden = open;
-      document.body.classList.toggle('nav-open', !open);
+      setNav(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    panel.addEventListener('click', function (event) {
+      if (event.target.closest('a')) setNav(false);
+    });
+    doc.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setNav(false);
+        toggle.focus();
+      }
     });
   }
-  var header = document.querySelector('[data-header]');
+
+  var header = doc.querySelector('[data-header]');
   if (header) {
-    var onScroll = function () {
+    var ticking = false;
+    var apply = function () {
       header.classList.toggle('is-scrolled', window.scrollY > 8);
+      ticking = false;
     };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    apply();
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(apply);
+    }, { passive: true });
+  }
+
+  function track(name, params) {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', name, params || {});
+  }
+
+  doc.addEventListener('click', function (event) {
+    var link = event.target.closest && event.target.closest('a[href]');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    if (href.indexOf('wa.me') === -1) return;
+    var placement = link.classList.contains('wa-fab')
+      ? 'floating_button'
+      : link.closest('.site-header')
+        ? 'header'
+        : link.classList.contains('cta-band__action')
+          ? 'cta_band'
+          : 'inline';
+    track('whatsapp_click', {
+      placement: placement,
+      page_path: window.location.pathname,
+      link_text: (link.textContent || '').trim().slice(0, 60),
+    });
+  });
+
+  var form = doc.querySelector('[data-brief-form]');
+  if (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var field = function (name) {
+        var el = form.elements[name];
+        return el && el.value ? el.value.trim() : '';
+      };
+      var status = form.querySelector('[data-brief-status]');
+      var invalid = [];
+      var mark = function (name, bad) {
+        var el = form.elements[name];
+        if (!el) return;
+        if (bad) {
+          invalid.push(el);
+          el.setAttribute('aria-invalid', 'true');
+        } else {
+          el.removeAttribute('aria-invalid');
+        }
+      };
+      var emailValue = field('email');
+      mark('name', !field('name'));
+      mark('email', !emailValue || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue));
+      mark('brief', !field('brief'));
+      if (invalid.length) {
+        track('brief_form_error', { page_path: window.location.pathname, field_count: invalid.length });
+        if (status) {
+          status.hidden = false;
+          status.setAttribute('data-state', 'error');
+          status.textContent =
+            'Please add your name, a working email address, and a short description of what should be automated. Nothing was sent yet.';
+        }
+        invalid[0].focus();
+        return;
+      }
+      var lines = [
+        'Hi Muhammad, here is my project brief.',
+        '',
+        'Name: ' + (field('name') || '-'),
+        'Company: ' + (field('company') || '-'),
+        'Email: ' + (field('email') || '-'),
+        'Timeline: ' + (field('timeline') || '-'),
+        'Budget: ' + (field('budget') || '-'),
+        '',
+        'What I need:',
+        field('brief') || '-'
+      ];
+      var open = form.getAttribute('data-wa-number') || '';
+      track('brief_form_submit', {
+        page_path: window.location.pathname,
+        has_company: Boolean(field('company')),
+        timeline: field('timeline')
+      });
+      if (open) {
+        window.open('https://wa.me/' + open + '?text=' + encodeURIComponent(lines.join('\\n')), '_blank', 'noopener');
+      }
+      var status = form.querySelector('[data-brief-status]');
+      if (status) {
+        status.hidden = false;
+        status.setAttribute('data-state', 'success');
+        status.textContent = 'WhatsApp should now be open in a new tab with your brief pre-filled. If it did not open, the WhatsApp button in the header always works.';
+      }
+    });
   }
 })();
 </script>`;

@@ -9,6 +9,7 @@ import { BASE_SCRIPT, renderPage } from '../lib/layout.js';
 import { breadcrumbSchema, buildSeo, personSchema } from '../lib/seo.js';
 import {
   breadcrumbs,
+  briefForm,
   button,
   ctaBand,
   featureGrid,
@@ -114,7 +115,7 @@ export function renderAbout(model) {
             { title: 'Based in', body: ABOUT.contactNote },
             { title: 'Working languages', body: 'English and Urdu. All documentation, code comments, and handover material are written in English.' },
             { title: 'Availability', body: 'One or two concurrent engagements, depending on scope. Larger builds are scheduled rather than started immediately.' },
-            { title: 'Contact', body: `WhatsApp ${SITE.whatsapp.display}. No contact form, no scheduling link.` },
+            { title: 'Contact', body: `WhatsApp ${SITE.whatsapp.display} or the project brief on /contact/. No scheduling link, no funnel.` },
           ],
           'feature-grid feature-grid--2',
         )}
@@ -142,8 +143,8 @@ export function renderAbout(model) {
  */
 export function renderContact(model) {
   const seo = buildSeo({
-    title: 'Contact — WhatsApp is the only channel',
-    description: `Contact Muhammad Hamid directly on WhatsApp ${SITE.whatsapp.display}. No forms, no funnels: describe the system and the problem, and you get a direct answer.`,
+    title: 'Contact — brief in, WhatsApp out',
+    description: `Send a two-minute project brief or message Muhammad Hamid on WhatsApp ${SITE.whatsapp.display}. Scope, timeline and the first honest answer, usually within one working day.`,
     path: '/contact/',
     jsonLd: [
       breadcrumbSchema([
@@ -159,8 +160,8 @@ export function renderContact(model) {
   ])}
     ${pageHeader({
       eyebrow: 'Contact',
-      heading: 'One channel: WhatsApp',
-      lede: 'There is no contact form on this site. WhatsApp keeps the conversation in one place and gets a faster answer than an inbox.',
+      heading: 'Tell me what should run itself',
+      lede: 'Use the brief below or open WhatsApp directly. Either path reaches the same inbox — the brief just saves a round of questions, because it opens WhatsApp with your answers already written out.',
       actions: `${button(waLink('Hi Muhammad, I want to discuss an automation project.'), `WhatsApp ${SITE.whatsapp.display}`, { external: true })}${button(SITE.github.url, 'GitHub', { variant: 'ghost', external: true })}`,
     })}
 
@@ -185,6 +186,25 @@ export function renderContact(model) {
             <div><dt>Remote work</dt><dd>Europe, Middle East, North America</dd></div>
           </dl>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="brief">
+      <div class="shell split split--wide">
+        <div>
+          ${briefForm()}
+        </div>
+        <aside class="contact-aside">
+          <h2 class="contact-aside__title">Or skip the form</h2>
+          <p class="contact-aside__body">The WhatsApp button in the header always works, and it is the fastest route if you already know what you need.</p>
+          <ul class="contact-aside__list">
+            <li><strong>Reply window</strong> — within one working day, Pakistan Standard Time (UTC+5).</li>
+            <li><strong>First call</strong> — 20 minutes, no deck, no pitch. Scope or no scope.</li>
+            <li><strong>What I need</strong> — the tools involved, the manual step that hurts, and any deadline.</li>
+            <li><strong>What comes back</strong> — a written scope with steps, timeline and a fixed price, or a straight no.</li>
+          </ul>
+          <a class="btn btn--ghost" href="${escapeAttr(waLink('Hi Muhammad, I want to discuss an automation project.'))}" target="_blank" rel="noopener">Open WhatsApp instead</a>
+        </aside>
       </div>
     </section>
 

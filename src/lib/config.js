@@ -47,6 +47,20 @@ export function waLink(message) {
   return `${base}?text=${encodeURIComponent(message)}`;
 }
 
+/**
+ * Build-time integrations.
+ * Both values are injected at build time by environment variable, so the
+ * repository never contains an account identifier that is not already public.
+ * When unset, the corresponding tag is not rendered at all — no placeholder,
+ * no fake measurement ID.
+ */
+export const INTEGRATIONS = {
+  /** Google Analytics 4 measurement ID, e.g. G-XXXXXXXXXX. */
+  ga4Id: (process.env.PUBLIC_GA4_ID ?? '').trim(),
+  /** Google Search Console HTML-tag verification token. */
+  googleSiteVerification: (process.env.PUBLIC_GSC_TOKEN ?? '').trim(),
+};
+
 /** Primary call to action used across the site. */
 export const PRIMARY_CTA = {
   label: 'Discuss your automation on WhatsApp',

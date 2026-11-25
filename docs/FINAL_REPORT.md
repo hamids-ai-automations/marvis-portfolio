@@ -1,3 +1,14 @@
+---
+AIGC:
+    Label: "1"
+    ContentProducer: 001191440300708461136T1XGW3
+    ProduceID: a60f8e46820ea466ef0868a20e79d739_bbaddf97e89e11f1961f525400f8a581
+    ReservedCode1: yQrWB4KbL+E1uLdn7vTT+M6ez8F1rIynIDROnjg0CDd+WpKyvAuu0HnSBQaD9LKOpPQyB5cGC9cAd5e5dsiTcPwe2PMUH9tiQ2fOUI28aVo2AFX5lWA1NR7kKixArH68hN/NbEICxpVusNJ6fl/qLTwRlRMHbHyH9USG1TmZLZinPO+hK6WiuuzVqG8=
+    ContentPropagator: 001191440300708461136T1XGW3
+    PropagateID: a60f8e46820ea466ef0868a20e79d739_bbaddf97e89e11f1961f525400f8a581
+    ReservedCode2: yQrWB4KbL+E1uLdn7vTT+M6ez8F1rIynIDROnjg0CDd+WpKyvAuu0HnSBQaD9LKOpPQyB5cGC9cAd5e5dsiTcPwe2PMUH9tiQ2fOUI28aVo2AFX5lWA1NR7kKixArH68hN/NbEICxpVusNJ6fl/qLTwRlRMHbHyH9USG1TmZLZinPO+hK6WiuuzVqG8=
+---
+
 # Final report — Marvis portfolio rebuild
 
 Date: 2026-11-25
@@ -69,9 +80,36 @@ Evidence runs:
 | Mobile | 390×844 viewport: zero horizontal overflow (scrollWidth 390), floating WhatsApp button visible, unobstructed and clickable |
 | Responsive CSS | no fixed pixel widths, fluid `clamp()` typography, `overflow-x: auto` for wide blocks |
 
+## Revamp pass (brief: revamp of marvis.web.app)
+
+Scope delivered in this pass: audit → redesign → content rewrite with evidence discipline →
+per-page conversion paths → WhatsApp lead system → technical SEO → Core Web Vitals → QA.
+
+| Change | Detail |
+| --- | --- |
+| Contact briefing form | Client-side handshake only (`data-brief-form`), builds a pre-filled `wa.me/923167417135` message, stores nothing, no network call, no hidden inputs |
+| Home `#how-it-runs` | Inline SVG automation diagram (no image request) + "proven / not proven" evidence panels |
+| Service detail pages | Mid-page inline WhatsApp CTA plus closing CTA; single `<h1>` preserved |
+| GA4 events | `wa_click` and `brief_form_submit` fired on intent, no PII in payload |
+| Validator | Relaxed only to allow the client-side briefing form; `action`/`method`/hidden inputs still rejected |
+| Tests | 33/33 pass (3 new: form handshake, home evidence block, service inline CTA) |
+
+Lighthouse 11, mobile emulation, local `dist/` over `scripts/serve.js`:
+
+| Route | Performance | Accessibility | Best practices | SEO | LCP | CLS | TBT |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `/` | 90 | 100 | 100 | 100 | 1.31 s | 0.000 | 407 ms |
+| `/contact/` | 99 | 100 | 100 | 100 | 1.22 s | 0.000 | 144 ms |
+
+Fixes applied after the first post-change run: brand link accessible name now derives from its
+visible text (WCAG 2.5.3 label-in-name), and `.field__hint` moved from `--text-dim` + 0.85 opacity
+(4.27:1) to `--text-muted` (passes 4.5:1). PWA score is intentionally low — no service worker is
+shipped, matching the "no offline claim we cannot honour" rule.
+
 ## Known limitations
 
 - Firebase MCP exposes project/app/deploy tooling only; Firestore document or Storage object CRUD is
   not available through it, so content is managed in git rather than a database.
 - Spark plan: hosting only, no Cloud Functions, no billing.
 - `live-check` is weekly; a broken deploy is caught by the deploy workflow itself first.
+*（内容由AI生成，仅供参考）*

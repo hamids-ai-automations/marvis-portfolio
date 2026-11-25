@@ -98,7 +98,17 @@ function checkPage(html, route) {
 
   if (/mailto:/i.test(html)) fail(`${route}: contains a mailto: link — WhatsApp is the only authorised channel`);
   if (/href="tel:/i.test(html)) fail(`${route}: contains a tel: link — WhatsApp is the only authorised channel`);
-  if (/<form[\s>]/i.test(html)) fail(`${route}: contains a <form> — the site must stay form-free`);
+  // Forms are allowed only as a client-side WhatsApp handoff: no action, no method,
+  // no network submission, and every field must be optional or labelled in-page.
+  const forms = html.match(/<form[\s\S]*?<\/form>/gi) ?? [];
+  for (const form of forms) {
+    if (!/data-brief-form/.test(form)) fail(`${route}: <form> without data-brief-form — only the brief handoff form is allowed`);
+    if (/\baction=/i.test(form)) fail(`${route}: <form action> detected — the site must not post to a server`);
+    if (/\bmethod=/i.test(form)) fail(`${route}: <form method> detected — the site must not post to a server`);
+    if (!/data-brief-status/.test(form)) fail(`${route}: brief form has no status region for success and error states`);
+    if (!/data-wa-number="923167417135"/.test(form)) fail(`${route}: brief form does not target the authorised WhatsApp number`);
+  }
+  if (/<input[^>]+type="hidden"/i.test(html)) fail(`${route}: hidden input detected — no data may be collected silently`);
 
   for (const pattern of PLACEHOLDERS) {
     // Code samples may legitimately contain illustrative example.com addresses.

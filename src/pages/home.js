@@ -18,8 +18,10 @@ import {
 } from '../lib/seo.js';
 import {
   articleCard,
+  automationDiagram,
   button,
   ctaBand,
+  evidencePanels,
   faqList,
   projectCard,
   sectionHeader,
@@ -96,6 +98,36 @@ export function renderHome(model) {
       </div>
     </section>
 
+    <section class="section section--defer" id="how-it-runs">
+      <div class="shell">
+        <div class="section-head-row">
+          ${sectionHeader({
+            eyebrow: 'How the work runs',
+            heading: 'One architecture, five stages, checked at every step',
+            body: 'Every build on this site follows the same spine. The difference between a demo and something a team can keep using is the guardrails and the evaluation loop around the model call.',
+          })}
+        </div>
+        ${automationDiagram({
+          caption:
+            'Signals are captured from the tools a team already uses, normalised into one schema, reasoned over with retrieved context, checked against validation and human approval, then written back to the system of record. Failed runs become the next evaluation case.',
+        })}
+        ${evidencePanels({
+          proven: [
+            'Every project listed below links to public code that can be read today.',
+            'This site is static HTML: one stylesheet, roughly 4 KB of inline JavaScript, no framework runtime.',
+            'Repository counts and language shares on this page are generated from the GitHub API at build time, not typed in by hand.',
+            'The contact form stores nothing — it writes a WhatsApp message in the browser and hands it to you to send.',
+          ],
+          unproven: [
+            'No client logos. None of the commercial engagements are publicly attributable, so none are displayed.',
+            'No testimonial quotes. Written permission to be named has not been given by any client.',
+            'No hours-saved or revenue figures. Nothing has been measured with a client instrument and cleared for publication.',
+            'No compliance claims. No SOC 2, ISO 27001 or similar certification is held.',
+          ],
+        })}
+      </div>
+    </section>
+
     <section class="section" id="services">
       <div class="shell">
         ${sectionHeader(HOME.sections.capabilities)}
@@ -105,7 +137,7 @@ export function renderHome(model) {
       </div>
     </section>
 
-    <section class="section section--alt" id="work">
+    <section class="section section--alt section--defer" id="work">
       <div class="shell">
         <div class="section-head-row">
           ${sectionHeader(HOME.sections.work)}
@@ -117,7 +149,7 @@ export function renderHome(model) {
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section--defer">
       <div class="shell">
         ${sectionHeader(HOME.sections.principles)}
         <ol class="principles">
@@ -136,7 +168,7 @@ export function renderHome(model) {
       </div>
     </section>
 
-    <section class="section section--alt">
+    <section class="section section--alt section--defer">
       <div class="shell stack-section">
         <div>
           ${sectionHeader(HOME.sections.stack)}
@@ -159,7 +191,7 @@ export function renderHome(model) {
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section--defer">
       <div class="shell">
         <div class="section-head-row">
           ${sectionHeader({ eyebrow: 'Writing', heading: 'Notes from the build', body: 'Technical write-ups on MCP, agent evaluation, and measurement — the parts that are hard to get right.' })}
@@ -171,7 +203,7 @@ export function renderHome(model) {
       </div>
     </section>
 
-    <section class="section section--alt">
+    <section class="section section--alt section--defer">
       <div class="shell faq-section">
         ${sectionHeader({ eyebrow: 'Questions', heading: 'Before you message me' })}
         ${faqList(HOME_FAQS)}
