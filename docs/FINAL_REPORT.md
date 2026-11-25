@@ -96,15 +96,22 @@ per-page conversion paths → WhatsApp lead system → technical SEO → Core We
 
 Lighthouse 11, mobile emulation, local `dist/` over `scripts/serve.js`:
 
-| Route | Performance | Accessibility | Best practices | SEO | LCP | CLS | TBT |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `/` | 90 | 100 | 100 | 100 | 1.31 s | 0.000 | 407 ms |
-| `/contact/` | 99 | 100 | 100 | 100 | 1.22 s | 0.000 | 144 ms |
+| Route | Environment | Performance | Accessibility | Best practices | SEO | LCP | CLS | TBT |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `/` | local `dist/` | 90 | 100 | 100 | 100 | 1.31 s | 0.000 | 407 ms |
+| `/contact/` | local `dist/` | 99 | 100 | 100 | 100 | 1.22 s | 0.000 | 144 ms |
+| `/` | live `marvis.web.app` | 99 | 100 | 100 | 100 | 1.35 s | 0.000 | 90 ms |
+| `/contact/` | live `marvis.web.app` | 100 | 100 | 100 | 100 | 1.29 s | 0.000 | 27 ms |
 
 Fixes applied after the first post-change run: brand link accessible name now derives from its
 visible text (WCAG 2.5.3 label-in-name), and `.field__hint` moved from `--text-dim` + 0.85 opacity
 (4.27:1) to `--text-muted` (passes 4.5:1). PWA score is intentionally low — no service worker is
 shipped, matching the "no offline claim we cannot honour" rule.
+
+Live deploy evidence for this pass (commit `62e6ae5`, workflow run 45616908763): homepage 200 with
+`#how-it-runs` diagram, evidence panels and `wa.me/923167417135` CTAs; `/contact/` serves the
+briefing form (`data-brief-form`, two hint elements, no hidden inputs); `/services/ai-automation/`
+serves the inline CTA with exactly one `<h1>`; CSP header present; 5 JSON-LD blocks on home.
 
 ## Known limitations
 
