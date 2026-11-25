@@ -8,6 +8,8 @@ on:
   schedule:
     - cron: '0 5 * * *' # daily 05:00 UTC
   workflow_dispatch:
+  repository_dispatch:
+    types: [master-record-updated]
 
 permissions:
   contents: write

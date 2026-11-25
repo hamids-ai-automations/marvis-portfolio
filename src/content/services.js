@@ -295,7 +295,7 @@ export const SERVICES = [
     serviceType: 'GoHighLevel (HighLevel) automation',
     nav: 'GoHighLevel Automation',
     title: 'GoHighLevel automation you can audit',
-    metaTitle: 'GoHighLevel (HighLevel) API Automation and DevOps Tooling',
+    metaTitle: 'GoHighLevel API Automation and DevOps Tooling',
     metaDescription:
       'Contract-first GoHighLevel automation: reliable API clients, honest pagination, OAuth refresh that survives production, webhook debugging, and read-only CRM observability.',
     eyebrow: 'Service 05',
