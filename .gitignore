@@ -33,3 +33,7 @@ temp-*.txt
 temp-probe.mjs
 
 data/sync-state.json
+
+# CLI output captures
+*.output.txt
+dep.txt

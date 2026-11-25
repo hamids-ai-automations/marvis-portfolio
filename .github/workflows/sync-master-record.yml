@@ -47,4 +47,5 @@ jobs:
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Summary
-        run: echo "Snapshot changed: ${{ steps.commit.outputs.changed }}"
+        run: |
+          echo "Snapshot changed: ${{ steps.commit.outputs.changed }}"

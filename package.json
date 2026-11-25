@@ -12,7 +12,7 @@
     "sync:check": "node scripts/sync-data.js --dry-run",
     "build": "node scripts/build.js",
     "validate": "node scripts/validate.js",
-    "test": "node --test \"tests/**/*.test.js\"",
+    "test": "node --test tests/",
     "ci": "npm run build && npm run validate && npm test",
     "check": "npm run ci",
     "serve": "node scripts/serve.js",
