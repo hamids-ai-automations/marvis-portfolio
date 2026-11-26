@@ -26,7 +26,7 @@ export const SITE = {
   github: {
     user: "hamids-ai-automations",
     url: "https://github.com/hamids-ai-automations",
-    publicRepos: 98,
+    publicRepos: 101,
   },
   location: "Lahore, Pakistan (UTC+5)",
   replyNote: "Typically replies within one working day, Pakistan time (UTC+5).",
