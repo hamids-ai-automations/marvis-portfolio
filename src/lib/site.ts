@@ -15,7 +15,7 @@ export const SITE = {
   tagline: "I build the automation layer between AI models and real business systems.",
   url: "https://marvis.web.app",
   description:
-    "Muhammad Hamid is an AI Automation Engineer in Lahore, Pakistan, building MCP servers, evaluated AI agents, Gemini applications and GoHighLevel automations that run against production business systems.",
+    "Muhammad Hamid — AI Automation Engineer in Lahore. Building MCP servers, evaluated AI agents, Gemini applications and GoHighLevel production automations.",
   locale: "en",
   language: "en",
   whatsapp: {

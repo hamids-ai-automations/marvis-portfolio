@@ -1,0 +1,143 @@
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - ".gitignore"
+      - "LICENSE"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+# Never allow an outdated deployment to overwrite a newer release.
+concurrency:
+  group: firebase-deploy-marvis
+  cancel-in-progress: true
+
+env:
+  FIREBASE_PROJECT: my-1st-web-app-ef52d
+  HOSTING_TARGET: marvis
+  LIVE_URL: https://marvis.web.app
+
+jobs:
+  build-validate-deploy:
+    name: Build, validate, deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://marvis.web.app
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies (lockfile)
+        run: bun install
+
+      - name: Lint
+        run: bun run lint
+
+      - name: Type check
+        run: bun run typecheck
+
+      - name: Generate raster assets (OG image, touch icon)
+        run: bun run og
+
+      - name: Production build (static export)
+        run: |
+          bun run build:export
+          # Firebase Hosting expects 404.html at the root of the public dir.
+          if [ ! -f out/404.html ] && [ -f out/404/index.html ]; then
+            cp out/404/index.html out/404.html
+          fi
+
+      - name: Validate SEO, links and machine surfaces
+        run: bun run validate
+
+      - name: Check deploy credentials
+        id: creds
+        env:
+          WIF_PROVIDER: ${{ secrets.WIF_PROVIDER }}
+          WIF_SERVICE_ACCOUNT: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+          SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          if [ -n "$WIF_PROVIDER" ] && [ -n "$WIF_SERVICE_ACCOUNT" ]; then
+            echo "mode=wif" >> "$GITHUB_OUTPUT"
+          elif [ -n "$SA" ]; then
+            echo "mode=sa" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=none" >> "$GITHUB_OUTPUT"
+            echo "::notice::No deploy credentials configured. Add WIF_PROVIDER + WIF_SERVICE_ACCOUNT (preferred) or FIREBASE_SERVICE_ACCOUNT secrets to enable automatic deploys. The build is fully validated; only the deploy step is skipped."
+          fi
+
+      - name: Authenticate to Google Cloud (Workload Identity Federation)
+        if: steps.creds.outputs.mode == 'wif'
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Authenticate to Google Cloud (service account)
+        if: steps.creds.outputs.mode == 'sa'
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      - name: Deploy to Firebase Hosting site "marvis"
+        if: steps.creds.outputs.mode != 'none'
+        run: |
+          npx --yes firebase-tools@latest deploy \
+            --only hosting:${{ env.HOSTING_TARGET }} \
+            --non-interactive \
+            --project ${{ env.FIREBASE_PROJECT }}
+          echo "DEPLOY_EXIT=$?" >> "$GITHUB_ENV"
+
+      - name: Verify live website
+        if: steps.creds.outputs.mode != 'none'
+        run: |
+          set -e
+          sleep 10
+          check() {
+            local url="$1" expect="$2" label="$3"
+            local body status
+            body=$(curl -sL --max-time 30 "$url") || true
+            status=$(curl -sL -o /dev/null -w "%{http_code}" --max-time 30 "$url") || status="000"
+            if [ "$status" != "200" ]; then
+              echo "::error::${label} returned HTTP ${status}"
+              exit 1
+            fi
+            if [ -n "$expect" ] && ! echo "$body" | grep -q "$expect"; then
+              echo "::error::${label} did not contain expected content '${expect}'"
+              exit 1
+            fi
+            echo "OK  ${label} (${status})"
+          }
+          check "$LIVE_URL" "Muhammad Hamid" "Homepage"
+          check "$LIVE_URL/about/" "growth" "About page"
+          check "$LIVE_URL/services/ai-automation/" "AI automation" "AI Automation service page"
+          check "$LIVE_URL/projects/" "Repositories" "Projects page"
+          check "$LIVE_URL/articles/" "articles" "Articles page"
+          check "$LIVE_URL/sitemap.xml" "urlset" "Sitemap"
+          check "$LIVE_URL/robots.txt" "Sitemap" "robots.txt"
+          check "$LIVE_URL/llms.txt" "Marvis" "llms.txt"
+          echo "Live verification passed — https://marvis.web.app is serving the latest build."
+
+      - name: Deployment summary
+        if: always()
+        run: |
+          echo "### Deployment status" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ steps.creds.outputs.mode }}" = "none" ]; then
+            echo "⚠️ Build and validation passed. Deployment skipped — no credentials configured." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "✅ Built, validated, deployed and verified live at https://marvis.web.app" >> "$GITHUB_STEP_SUMMARY"
+          fi

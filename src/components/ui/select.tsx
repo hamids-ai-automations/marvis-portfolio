@@ -146,6 +146,7 @@ function SelectScrollUpButton({
         "flex cursor-default items-center justify-between py-1",
         className
       )}
+      {...props}
     >
       <ChevronUpIcon className="size-4" />
     </SelectPrimitive.ScrollUpButton>
@@ -163,6 +164,7 @@ function SelectScrollDownButton({
         "flex cursor-default items-center justify-center py-1",
         className
       )}
+      {...props}
     >
       <ChevronDownIcon className="size-4" />
     </SelectPrimitive.ScrollDownButton>

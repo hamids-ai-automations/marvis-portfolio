@@ -64,7 +64,12 @@ async function main() {
   }
 
   const files = await walk(OUT);
-  const htmlFiles = files.filter((f) => f.endsWith(".html") && !f.endsWith("404.html"));
+  const htmlFiles = files.filter((f) => {
+    if (!f.endsWith(".html")) return false;
+    const rel = path.relative(OUT, f).replace(/\\/g, "/");
+    if (rel === "404.html" || rel.startsWith("404/") || rel.startsWith("_not-found/")) return false;
+    return true;
+  });
 
   const titles = new Map();
   const descriptions = new Map();

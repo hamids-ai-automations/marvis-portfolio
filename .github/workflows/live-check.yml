@@ -1,0 +1,60 @@
+name: Live site health check
+
+on:
+  schedule:
+    # 06:15 UTC daily (11:15 Pakistan time)
+    - cron: "15 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  health-check:
+    name: Verify production endpoints
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check critical pages
+        run: |
+          set -e
+          BASE="https://marvis.web.app"
+          check() {
+            local path="$1" expect="$2"
+            local status body
+            body=$(curl -sL --max-time 30 "$BASE$path") || true
+            status=$(curl -sL -o /dev/null -w "%{http_code}" --max-time 30 "$BASE$path") || status="000"
+            if [ "$status" != "200" ]; then
+              echo "::error::${path} returned HTTP ${status}"
+              FAILED=1
+            else
+              if [ -n "$expect" ] && ! echo "$body" | grep -q "$expect"; then
+                echo "::error::${path} missing expected content '${expect}'"
+                FAILED=1
+              else
+                echo "OK  ${path} (${status})"
+              fi
+            fi
+          }
+          check "/" "Muhammad Hamid"
+          check "/about/" "growth"
+          check "/contact/" "WhatsApp"
+          check "/services/" "services"
+          check "/services/ai-automation/" "AI automation"
+          check "/services/mcp-development/" "MCP"
+          check "/services/gemini-development/" "Gemini"
+          check "/services/gohighlevel-automation/" "GoHighLevel"
+          check "/projects/" "Repositories"
+          check "/projects/shopify-growth-mcp/" "Shopify"
+          check "/articles/" "articles"
+          check "/articles/building-mcp-servers-for-ai-agents/" "MCP"
+          check "/privacy/" "Privacy"
+          check "/terms/" "Terms"
+          check "/sitemap.xml" "urlset"
+          check "/robots.txt" "Sitemap"
+          check "/llms.txt" "Marvis"
+          check "/404.html" "404"
+          if [ -n "$FAILED" ]; then
+            echo "::error::Live site health check FAILED"
+            exit 1
+          fi
+          echo "All production endpoints healthy."
