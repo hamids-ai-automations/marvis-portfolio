@@ -13,6 +13,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "og": "node scripts/generate-og.mjs",
+    "sync": "node scripts/sync-data.mjs",
     "validate": "node scripts/validate.mjs",
     "ci": "bun run lint && bun run typecheck && bun run og && bun run build:export && bun run validate",
     "deploy": "bun run ci && firebase deploy --only hosting:marvis",

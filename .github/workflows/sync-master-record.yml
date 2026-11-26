@@ -1,0 +1,62 @@
+name: Sync Master Record
+
+# Pulls the latest profile data from github-profile-master-record,
+# updates the portfolio, commits if changed, and triggers a redeploy.
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily at 06:00 UTC
+  workflow_dispatch:
+  repository_dispatch:
+    types: [master-record-updated]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-master-record
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Sync Master Record & Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch and synchronize master record
+        run: node scripts/sync-data.mjs
+
+      - name: Commit changes if updated
+        id: commit
+        run: |
+          if git diff --quiet -- src/lib/site.ts data/; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Profile data is already up-to-date."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/lib/site.ts data/
+            git commit -m "chore(data): sync profile facts from master-record"
+            git push origin main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger Firebase deployment
+        if: steps.commit.outputs.changed == 'false' && github.event_name == 'repository_dispatch'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            console.log('Dispatching deploy trigger to firebase-deploy.yml...');
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'firebase-deploy.yml',
+              ref: 'main'
+            });
