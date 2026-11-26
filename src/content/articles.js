@@ -24,12 +24,12 @@ A JSON Schema with loose types will accept almost anything, and the model will s
 
 Strict schemas with enums, bounds, and \`additionalProperties: false\` are not pedantry — they are the contract that lets a model self-correct. When the client validates locally, a bad argument becomes a fast, cheap error instead of a wasted turn.
 
-```python
+\`\`\`python
 class ListOrdersArgs(BaseModel):
     model_config = ConfigDict(extra="forbid")
     limit: int = Field(default=20, ge=1, le=100)
     status: Literal["open", "closed", "any"] = "any"
-```
+\`\`\`
 
 The same rule applies to output. If the agent must parse what comes back, return structured content, not a paragraph the model has to interpret.
 
@@ -105,7 +105,7 @@ A tool declaration has two readers: the model, which decides when and how to cal
 
 A declaration I would trust in production:
 
-```python
+\`\`\`python
 from google.genai import types
 
 search_orders = types.FunctionDeclaration(
@@ -134,7 +134,7 @@ search_orders = types.FunctionDeclaration(
         required=["customer_email"],
     ),
 )
-```
+\`\`\`
 
 The details doing the real work:
 
@@ -152,7 +152,7 @@ Model-emitted arguments are untrusted input in the same sense as HTTP form data.
 
 The response to invalid arguments is not an exception. It is a tool result that tells the model what to fix:
 
-```python
+\`\`\`python
 def run_tool(name: str, args: dict) -> dict:
     result = REGISTRY.validate(name, args)
     if not result.ok:
@@ -164,7 +164,7 @@ def run_tool(name: str, args: dict) -> dict:
             "retry": True,
         }
     return REGISTRY.dispatch(name, args)
-```
+\`\`\`
 
 The \`retry\` flag is the important part. It turns a validation failure from a dead end into a self-correction path: the model reads the message, repairs the argument, and calls again. Budget the loop — one repair round, at most two. A model that needs three repairs is not converging, and the honest move is to stop and surface the failure to the user instead of burning tokens in a circle.
 
@@ -235,7 +235,7 @@ Accuracy at any price is not a product. Track tool calls per task, tokens per ta
 
 A dashboard nobody checks has no effect on quality. The suite belongs in CI, with thresholds:
 
-```python
+\`\`\`python
 THRESHOLDS = {
     "tool_choice_accuracy": 0.95,
     "argument_validity": 0.98,
@@ -243,7 +243,7 @@ THRESHOLDS = {
     "refusal_accuracy": 0.90,
     "mean_steps": 4.5,
 }
-```
+\`\`\`
 
 Build fails, PR is blocked, someone investigates. The threshold values matter less than the fact that they exist.
 
@@ -329,7 +329,7 @@ The agent chooses the right tools for reasons the schemas make obvious, its argu
 
 HighLevel list endpoints paginate. A naive client does this:
 
-```python
+\`\`\`python
 page = 1
 while True:
     res = get(f"/contacts/?locationId={loc}&page={page}")
@@ -337,7 +337,7 @@ while True:
     if not res["contacts"]:
         break
     page += 1
-```
+\`\`\`
 
 This is fine until the API returns a page with fewer items than the page size but more data still available, or until records created between page requests shift the offsets. The export looks complete, the report is wrong, and nobody notices for a month.
 
@@ -354,7 +354,7 @@ OAuth access tokens expire. If three parallel workers notice the expiry at the s
 
 Single-flight refresh solves it:
 
-```python
+\`\`\`python
 async def get_token(self) -> str:
     async with self._lock:
         if self._token and time.time() < self._expires_at - 60:
@@ -367,7 +367,7 @@ async def get_token(self) -> str:
             self._expires_at = time.time() + data["expires_in"]
             await self._persist()
             return self._token
-```
+\`\`\`
 
 The double check inside the lock is not redundant — it is what stops a queue of waiters from each performing a refresh in turn.
 
@@ -499,7 +499,7 @@ Everything else is plumbing.
 
 GA4 deduplicates on \`event_id\` within a window; Meta deduplicates on \`event_id\` when \`event_name\` and identity also match. Both require the same id to arrive from both browser and server.
 
-```json
+\`\`\`json
 {
   "event_name": "purchase",
   "event_id": "order_88213",
@@ -508,7 +508,7 @@ GA4 deduplicates on \`event_id\` within a window; Meta deduplicates on \`event_i
   "user_data": { "em": "<sha256>", "ph": "<sha256>" },
   "custom_data": { "value": 149.0, "currency": "USD" }
 }
-```
+\`\`\`
 
 The event id comes from the order, not from a random uuid generated in the browser — otherwise the server cannot reproduce it.
 
@@ -584,7 +584,7 @@ One transport-level detail worth knowing: the protocol negotiates its version be
 
 The client validates tool arguments against the declared JSON Schema where it can, and the model reads the same schema to decide what to pass. A loose schema wastes that entire channel. The declaration I aim for:
 
-```json
+\`\`\`json
 {
   "name": "calendar_list_events",
   "description": "List calendar events in a time window. Times are RFC 3339 strings with timezone offsets.",
@@ -604,7 +604,7 @@ The client validates tool arguments against the declared JSON Schema where it ca
     "additionalProperties": false
   }
 }
-```
+\`\`\`
 
 The rules that make this work:
 
