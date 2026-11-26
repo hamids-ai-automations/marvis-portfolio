@@ -1,0 +1,42 @@
+# Marvis Portfolio — Muhammad Hamid
+
+> AI Automation Engineer (Lahore, Pakistan) building open-source MCP servers,
+> evaluated AI agents, Gemini applications, GoHighLevel automation and Python
+> tooling that runs against production business systems.
+
+Contact: WhatsApp +92 316 7417135 (https://wa.me/923167417135) — the only channel.
+GitHub: https://github.com/hamids-ai-automations (98 public repositories)
+
+## Services
+
+- AI Automation Development: /services/ai-automation/
+- AI Agent Development: /services/ai-agent-development/
+- Gemini AI Development: /services/gemini-development/
+- LLM Application Development: /services/llm-development/
+- AI Integration Services: /services/ai-integration/
+- MCP Server Development: /services/mcp-development/
+- GoHighLevel Automation Development: /services/gohighlevel-automation/
+- Marketing Technology Engineering: /services/marketing-technology/
+- Python Automation Engineering: /services/python-automation/
+- AI Application Security: /services/ai-security/
+
+## Projects
+
+Documented open-source case pages live under /projects/ — including
+/shopify-growth-mcp/ (61-tool Shopify MCP server),
+/google-services-mcp/ (44 read-only Google Workspace tools),
+/gemini-agent-reliability-kit/ (offline agent evaluation harness),
+/ghl-automation-engine/ (contract-first GoHighLevel engine) and 15 more.
+
+## Articles
+
+Technical guides under /articles/ covering MCP server development, Gemini API
+automation, AI agent evaluation and reliability, GoHighLevel workflow
+automation, server-side conversion tracking, Google Workspace automation and
+AI application security.
+
+## Other pages
+
+- About: /about/
+- Contact with project brief: /contact/
+- Sitemap: /sitemap.xml
