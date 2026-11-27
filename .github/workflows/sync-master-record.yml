@@ -5,7 +5,7 @@ name: Sync Master Record
 
 on:
   schedule:
-    - cron: "0 6 * * *" # daily at 06:00 UTC
+    - cron: "0 4 * * *" # daily at 04:00 UTC (09:00 AM Asia/Karachi)
   workflow_dispatch:
   repository_dispatch:
     types: [master-record-updated]
